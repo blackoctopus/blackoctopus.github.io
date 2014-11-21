@@ -7,6 +7,70 @@
     <atom:link href="http://Blackoctopus.github.io/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
+        <title>website 3</title>
+        <description>&lt;p&gt;&lt;a href=&quot;http://www.sitepoint.com/build-a-responsive-mobile-friendly-website-from-scratch-design-a-mockup/&quot; title=&quot;Permalink to Build a Responsive, Mobile-Friendly Website From Scratch: Design a Mockup&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;build-a-responsive-mobile-friendly-website-from-scratch-design-a-mockup&quot;&gt;Build a Responsive, Mobile-Friendly Website From Scratch: Design a Mockup&lt;/h1&gt;
+
+&lt;h4 id=&quot;build-a-responsive-mobile-friendly-website-from-scratch1&quot;&gt;&lt;a href=&quot;http://www.sitepoint.com/series/build-a-responsive-mobile-friendly-website-from-scratch/&quot; title=&quot;Build a Responsive, Mobile-Friendly Website From Scratch&quot;&gt;Build a Responsive, Mobile-Friendly Website From Scratch&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;In the &lt;a href=&quot;http://www.sitepoint.com/building-a-responsive-website-introduction/&quot; title=&quot;Build a Responsive, Mobile-Friendly Website From Scratch: Introduction&quot;&gt;first article&lt;/a&gt; of this brand new series, I have introduced the main objectives of the series and given a short but complete introduction on the critical components of media queries and responsive breakpoints. Now, it’s time to begin doing some practical work. As I have mentioned before, I’ll start with the planning and creation of a mockup for each of the three main device types on which our responsive website will be designed, tested, and displayed: PC desktops, tablets, and mobile phones.&lt;/p&gt;
+
+&lt;h3 id=&quot;lets-start&quot;&gt;3…2…1… Let’s Start!&lt;/h3&gt;
+
+&lt;p&gt;Before continuing, I want to give you a little advice: remember that the more mockups you do, the more arduous and confusing your job will become. Responsive mockups are not the same as static mockups; you don’t really know where your content will be placed, because it depends on the screen size.&lt;/p&gt;
+
+&lt;p&gt;Obviously, as we’ve seen in the previous series, designing mockups for every screen size is nearly impossible, because there are potentially hundreds of screens, layouts, and orientations that you have to accommodate. This is why I suggest that you select your target screens/layouts and build the project mockups only for your top three main devices’ categories.&lt;/p&gt;
+
+&lt;p&gt;For obvious reasons, I won’t show you how to design and build the entire website, but I’ll focus on the homepage, although I’m sure that once you have understood the logic and basis of responsive web design, you’ll be able to proceed with building the entire portal and everything will fall into place. I should reiterate that creating mockups doesn’t usually require that you lay out every single view to perfection, and that they are effective as soon as they’re enough of an abstraction of the final product (website or app) that they give you sufficient information to begin building.&lt;/p&gt;
+
+&lt;p&gt;I have chosen to build my project mockup using &lt;a href=&quot;http://www.sitepoint.com/build-a-project-mockup-using-balsamiq/&quot; title=&quot;Build a project mockup using Balsamiq&quot;&gt;Balsamiq Mockups&lt;/a&gt;. As I have explained in detail in the linked article, Balsamiq Mockups is a tool that helps developers to create wireframes and communicate with clients and coworkers with visual representations of their design plans. Balsamiq is offline desktop software, and you can work with it using the operating system of your choice, since it runs on Mac, Windows, and Linux.&lt;/p&gt;
+
+&lt;p&gt;Let’s start planning the mockup of our website working on the PC desktop version.&lt;/p&gt;
+
+&lt;p&gt;First and foremost, let me introduce the kind of website we’re going to desogm and all of the elements that we’ll find within it. In fact, when building a web app or website, it’s a good practice to identify your content ahead of time and designate respective content areas within the website template. For our purposes, we’ll build a website with main content topics like graphics, web design and mobile development, a place where the design-addicted can read articles about their favourite fields, discuss, learn new techniques, and stay informed.&lt;/p&gt;
+
+&lt;p&gt;Let’s see how can we proceed using the elements of Balsamiq Mockups and focus on one target layout first. We have to work on the placement of blocks on the layouts, and as a first step, I place the browser window shape to represent the profile of any browser page and set its size using slight adjustments with the mouse.&lt;/p&gt;
+
+&lt;p&gt;As for the style of the main page, the first thing to determine is which elements we want to show on our brand new homepage. Generally, we might find a header, a newsletter bar, a menu-list, some sidebars (based on the extra-content you want to enter), a text box for the most important information, an image, or some links, for example.&lt;/p&gt;
+
+&lt;p&gt;Thanks to its simple, intuitive drag-and-drop system, we can easily add everything we want with a few clicks. For the first components of our page, we have to open the category called “Big.” Here, we’ll find the following elements elements: title/headline, the text area, and the image box. So, drag and drop each of these into your mockup.  Then, open the category “Common” to find rectangles, text areas, text input boxes, image and icons’ indicators, and link pointers. Let’s place the two sidebars to the left of the author information box (where it could be nice adding a photo) under the main content box, which occupies the full window width.&lt;/p&gt;
+
+&lt;p&gt;At this point, our design concept should look something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/04/pc-desktop-mockup1.png&quot; alt=&quot;pc-desktop-mockup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Once you’ve dragged and dropped the elements, you’ll see that each element has extensive editing options. When you click on the title/headline or within the text box, you’ll see a typical text editor, where you’ll be able to specify the characteristics or content. You can modify texts selecting size, text alignment, format, and color. You can also set the background color, set the border color, add a scrollbar, and play with opacity and focus.&lt;/p&gt;
+
+&lt;p&gt;For images, we can show or hide a border, crop the image, and hyperlink the chosen image to lead to a new URL or screen. Since this is a mockup project intended mainly to keep in mind all the page elements and their arrangement, is not necessary in my opinion to make ultra-precise stylistic changes. What is important is to have a sort of “skeleton,” or a point of departure to fix attention on what is necessary to build into the structure with the help of the HTML code and the CSS3 styling rules.&lt;/p&gt;
+
+&lt;p&gt;Once we’re done with this first passage, let’s continue planning our tablet version.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/04/tablet-mockup.png&quot; alt=&quot;tablet-mockup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As you can see in the image above, all the elements used in this second mockup are the same; the only thing that has changed is their arrangement. In the top part of the page, almost everything has the same style: the banner and the newsletter bar occupy all the window width on the PC desktop as well as the tablet version.&lt;/p&gt;
+
+&lt;p&gt;What &lt;em&gt;has&lt;/em&gt; changed is the alignment of the menu-list items. In order to make the reading of menu items clear and easy even on a screen with a reduced size, I have planned to increase the space between all the present items. Additionally, the bottom part of the mockup introduces some slight changes: the sidebars that were placed on the left side of the author box have been moved under this and positioned next to each other in order to give them a larger width. Look below for clarity.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/04/smartphone-mockup-1024x521.png&quot; alt=&quot;smartphone-mockup&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;As our last step in the mockup process, let’s tackle the smartphone version.  I have placed the iPhone shape (as said before, it’s the only one available to represent the profile of all modern smartphones) and duplicated it twice to allow you to view what the user would see by scrolling through the site from the top to the bottom.&lt;/p&gt;
+
+&lt;p&gt;As you can see, for the top part of the portal, the arrangement of the newsletter elements has changed, andthe menu-item list is also different compared to the PC desktop and tablet mockups. The input box and the submit button are presented vertically in order to make the process of writing and sending data faster and simpler. As for the menu, the best solution to adopt in this case (since the menu is composed of only five items) is to create a drop-down menu that the user can easily touch to load the page he desires to visit.&lt;/p&gt;
+
+&lt;p&gt;All the other components of the page are set to their max width to make the content intuitive and accessible. Even if at this stage you cannot see it, for the text view, you can think about a simple trick to make your users satisfied. Remember that, if your content is too long, they would have to scroll down the page many times to reach the end, and this could easily cause disorientation and boredom. So you could solve this “too much content” problem by placing a “Read more” link that takes the user directly to the information he demands and makes the homepage more streamlined, easier to load, and pleasant to visit, even on a narrow smartphone screen.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;In this article, we’ve seen how to build a project mockup thinking responsively and—consequently—how a responsive design can adapt to three target layouts: Default (PC desktop), Portrait Tablet, and Smartphone. We’ve seen how to arrange the elements of a typical website in the three main devices’ categories by creating a template that represents the common content elements. In the third part of this series, we’ll start to write the HTML code and work on the structure of the homepage and set the first CSS styling rules to build an initial design.&lt;/p&gt;
+
+</description>
+        <pubDate>Fri, 21 Nov 2014 09:10:49 -0500</pubDate>
+        <link>http://Blackoctopus.github.io/web/2014/11/21/site3/</link>
+        <guid isPermaLink="true">http://Blackoctopus.github.io/web/2014/11/21/site3/</guid>
+      </item>
+    
+      <item>
         <title>Memorial Gardens</title>
         <description>&lt;p&gt;&lt;a href=&quot;https://jacksonvillenc.gov/index.aspx?nid=648&quot; title=&quot;Permalink to Jacksonville, NC - Official Website&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
 
@@ -279,11 +343,9 @@ http://computer.local:8000/spin
     
       <item>
         <title>Website part 1 of 6</title>
-        <description>&lt;p&gt;From &lt;a href=&quot;http://www.sitepoint.com/building-a-responsive-website-introduction/&quot;&gt;http://www.sitepoint.com/building-a-responsive-website-introduction/&lt;/a&gt;:&lt;/p&gt;
-
-&lt;h1 id=&quot;build-a-responsive-mobile-friendly-website-from-scratch-introduction&quot;&gt;Build a Responsive, Mobile-Friendly Website From Scratch: Introduction&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.sitepoint.com/author/atranfici/&quot;&gt; &lt;img src=&quot;http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;amp;r=G&quot; alt=&quot;&quot; /&gt; &lt;/a&gt;&lt;/p&gt;
+        <description>&lt;h1 id=&quot;build-a-responsive-mobile-friendly-website-from-scratch-introduction&quot;&gt;Build a Responsive, Mobile-Friendly Website From Scratch: Introduction&lt;/h1&gt;
+&lt;p&gt;From &lt;a href=&quot;http://www.sitepoint.com/building-a-responsive-website-introduction/&quot;&gt;http://www.sitepoint.com/building-a-responsive-website-introduction/&lt;/a&gt;:
+&lt;a href=&quot;http://www.sitepoint.com/author/atranfici/&quot;&gt; &lt;img src=&quot;http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;amp;r=G&quot; alt=&quot;&quot; /&gt; &lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://www.sitepoint.com/author/atranfici/&quot;&gt;Annarita Tranfici&lt;/a&gt;&lt;/p&gt;
 
@@ -1013,93 +1075,6 @@ I had a theory that whatever changes I made in the DB folder would be able to ro
         <pubDate>Fri, 03 Oct 2014 17:54:43 -0400</pubDate>
         <link>http://Blackoctopus.github.io/final/cut/pro/x/2014/10/03/Collaborative%20Final%20Cut%20Pro%20X/</link>
         <guid isPermaLink="true">http://Blackoctopus.github.io/final/cut/pro/x/2014/10/03/Collaborative%20Final%20Cut%20Pro%20X/</guid>
-      </item>
-    
-      <item>
-        <title>Podcast mind map podcast</title>
-        <description>
-&lt;hr /&gt;
-&lt;p&gt;layout: post
-title:  “Skype call recording with bookmarked, mind-mapped notes”
-date:   2014-10-05 14:26:54
-categories: terpstra
-—&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://m.tuaw.com/2009/08/15/skype-call-recording-with-bookmarked-mind-mapped-notes/&quot; title=&quot;Permalink to Skype call recording with bookmarked, mind-mapped notes - TUAW&quot;&gt;Source&lt;/a&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;skype-call-recording-with-bookmarked-mind-mapped-notes---tuaw&quot;&gt;Skype call recording with bookmarked, mind-mapped notes - TUAW&lt;/h1&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://m.aol.com/portal?icid=tuaw_head_aol&quot;&gt;AOL.com&lt;/a&gt; |  &lt;a href=&quot;http://m.aol.com/auth/signin.do?returl=http://webmail.aol.com&amp;amp;canurl=http://m.blackvoices.com/portal/default/home.do&quot;&gt;Mail&lt;/a&gt; |  &lt;a href=&quot;http://m.aol.com/search/default?icid=tuaw_head_search&quot;&gt;Search&lt;/a&gt;
-&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/aol_logo_header.gif&quot; alt=&quot;AOL&quot; /&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/AOL_tuawLogo.jpg&quot; alt=&quot;AOL_tuawLogo.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/tag/review/?icid=tuaw_nav_review&quot;&gt;REVIEWS&lt;/a&gt;
-&lt;a href=&quot;/tag/howto/?icid=tuaw_nav_howto&quot;&gt;HOW-TO&lt;/a&gt;
-&lt;a href=&quot;/tag/@video/?icid=tuaw_nav_video&quot;&gt;VIDEO&lt;/a&gt;
-&lt;a href=&quot;/tag/deals/?icid=tuaw_nav_deals&quot;&gt;DEALS&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://m.tuaw.com/category/features&quot;&gt;Features&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;skype-call-recording-with-bookmarked-mind-mapped-notes&quot;&gt;Skype call recording with bookmarked, mind-mapped notes&lt;/h2&gt;
-
-&lt;p&gt;Aug 15th 2009 9:00 AM EDT&lt;/p&gt;
-
-&lt;p&gt;BY  &lt;a href=&quot;/bloggers/brett-terpstra/?icid=tuaw__art_author&quot;&gt;Brett Terpstra&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/dims-global/dims3/MWAP/resize/240x180/format/jpg/http://www.blogcdn.com/www.tuaw.com/media/2009/08/skype-mindmanager-applescript-250.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve been perfecting a very specific efficiency aspect of my workflow: taking notes during Skype calls. I use a Skype-in number as my primary phone number, and – with permission – record client calls for future reference. I can’t tell you how many times this has come in handy. On long calls, though, going back and finding a specific point where something was mentioned can be a time-consuming hassle. What I wanted was the ability to record a Skype call while taking notes, and to then be able to reference my (abbreviated) notes back to the exact point where they were taken in the conversation.&lt;/p&gt;
-
-&lt;p&gt;I’ve played around extensively with doing this in Pear Note and Transcriva, and both work very well once you get the audio routing right (Soundflower is gold). However, I love taking my notes in a mind map format, and usually create a MindManager map before I start a call. This is especially valuable with long, long calls where keeping things organized and grouped on the fly as the conversation meanders and backtracks can be vital. So I donned my AppleScript hat and started seeing what I could do.&lt;/p&gt;
-
-&lt;p&gt;I’m using Audio Hijack Pro and Mindjet MindManager 7 Mac in these scripts. I had these readily available and they both have excellent AppleScript dictionaries, thus were conducive to satisfying my requirements. A little hacking could make these work with a variety of other applications. To set this up in Audio Hijack, I used the default Skype session and had my scripts check to see if we were recording, starting it up if we weren’t. From that point, I could add quick bookmarks to my MindManager topics during the conversation. When I read back through my notes, I can instantly play back the associated part of the conversation. Read on to find out how I did it!&lt;/p&gt;
-
-&lt;h3 id=&quot;record-a-bookmark&quot;&gt;Record a bookmark&lt;/h3&gt;
-
-&lt;p&gt;The following code will add a callout to the current topic&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/nextArrow.jpg&quot; alt=&quot;Next&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://m.facebook.com/sharer.php?u=http://www.tuaw.com/2009/08/15/skype-call-recording-with-bookmarked-mind-mapped-notes/&amp;amp;t=Skype%20call%20recording%20with%20bookmarked,%20mind-mapped%20notes&quot;&gt; &lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/btn_facebook.jpg&quot; alt=&quot;fshare&quot; /&gt;&lt;/a&gt; &lt;a href=&quot;/tweet?articleUrl=http://www.tuaw.com/2009/08/15/skype-call-recording-with-bookmarked-mind-mapped-notes/&amp;amp;title=Skype%20call%20recording%20with%20bookmarked,%20mind-mapped%20notes&quot;&gt; &lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/btn_twitter.jpg&quot; alt=&quot;tweet&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Filed under&lt;/strong&gt;: &lt;a href=&quot;http://m.tuaw.com/category/features/&quot;&gt;Features&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/category/productivity/&quot;&gt;Productivity&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/category/applescript/&quot;&gt;AppleScript&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Tags&lt;/strong&gt;: &lt;a href=&quot;http://m.tuaw.com/tag/audio/&quot;&gt;audio&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/audio%2Bhijack/&quot;&gt;audio hijack&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/audio%2Bhijack%2Bpro/&quot;&gt;audio hijack pro&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/AudioHijack/&quot;&gt;AudioHijack&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/AudioHijackPro/&quot;&gt;AudioHijackPro&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/mindjet%2Bmindmanager/&quot;&gt;mindjet mindmanager&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/mindjet-mindmanager/&quot;&gt;mindjet-mindmanager&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/MindjetMindmanager/&quot;&gt;MindjetMindmanager&lt;/a&gt;, &lt;a href=&quot;http://m.tuaw.com/tag/notes/&quot;&gt;notes&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/Mac/?icid=tuaw_ql_mac&quot;&gt;Mac&lt;/a&gt;
-&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/iPhone/?icid=tuaw_ql_iphone&quot;&gt;iPhone&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/iPad/?icid=tuaw_ql_ipad&quot;&gt;iPad&lt;/a&gt;
-&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/iPod/?icid=tuaw_ql_ipod&quot;&gt;iPod&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/Apple%2BTV/?icid=tuaw_ql_appletv&quot;&gt;Apple TV&lt;/a&gt;
-&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/bullet_blue.gif&quot; alt=&quot;bullet_blue.gif&quot; /&gt;&lt;a href=&quot;/tag/Mac101/?icid=tuaw_ql_mac101&quot;&gt;Mac 101&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.aolcdn.com/os/mobileweb/tuaw/prod/images/en/US/AOL_tuawLogo_Footer.jpg&quot; alt=&quot;AOL_tuawLogo_Footer.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&quot;http://m.aol.com/portal/directory?tab=directory&amp;amp;icid=tuaw_ftr_dir&quot;&gt;A-Z&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;/help?icid=tuaw_ftr_help&quot;&gt;Help&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&quot;http://legal.aol.com/mobiletos&quot;&gt;Privacy/TOS&lt;/a&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;© 2013 AOL Inc. All Rights Reserved&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://o.sa.aol.com/b/ss/aolwbtuaw,aolsvc/5/noscript/s2640231028335467200?pageName=Skype%2Bcall%2Brecording%2Bwith%2Bbookmarked%252C%2Bmind-mapped%2Bnotes&amp;amp;ch=us.tuaw_mb&amp;amp;c1=article&amp;amp;c2=features&amp;amp;c10=noscript&amp;amp;c12=http%253A%252F%252Fm.tuaw.com%252F2009%252F08%252F15%252Fskype-call-recording-with-bookmarked-mind-mapped-notes%252F&amp;amp;c13=noscript&amp;amp;c14=noscript&amp;amp;c49=noscript&amp;amp;c54=blogsmith&amp;amp;events=event10&amp;amp;c18=features%7Cproductivity%7Capplescript&amp;amp;c19=audio%7Caudio_hijack%7Caudio_hijack_pro%7CAudioHijack%7CAudioHijackPro%7Cmindjet_mindmanager%7Cmindjet-mindmanager%7CMindjetMindmanager%7Cnotes&amp;amp;c22=brett-terpstra&quot; alt=&quot;s2640231028335467200?pageName=Skype%2bca&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://b.scorecardresearch.com/b2?c1=2&amp;amp;c2=1000009&amp;amp;c4=http%3A%2F%2Fm.tuaw.com%2F2009%2F08%2F15%2Fskype-call-recording-with-bookmarked-mind-mapped-notes%2F&amp;amp;c7=http%3A%2F%2Fm.tuaw.com%2F2009%2F08%2F15%2Fskype-call-recording-with-bookmarked-mind-mapped-notes%2F&amp;amp;c5=us.tuaw_mb&amp;amp;c8=Skype%2Bcall%2Brecording%2Bwith%2Bbookmarked%2C%2Bmind-mapped%2Bnotes&quot; alt=&quot;*&quot; /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-&lt;p&gt;[[Document Created and Edited Using the &lt;a href=&quot;http://daringfireball.net/projects/markdown/&quot;&gt;Markdown&lt;/a&gt; Language.]]&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Sep 2013 00:00:00 -0400</pubDate>
-        <link>http://Blackoctopus.github.io/2013/09/08/Podcast%20Mind%20map%20podcast/</link>
-        <guid isPermaLink="true">http://Blackoctopus.github.io/2013/09/08/Podcast%20Mind%20map%20podcast/</guid>
       </item>
     
   </channel>
