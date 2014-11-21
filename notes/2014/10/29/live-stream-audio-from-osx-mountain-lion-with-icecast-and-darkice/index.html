@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>icecast tutorial &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="notes">
+    <link rel="canonical" href="http://Blackoctopus.github.io/notes/2014/10/29/live-stream-audio-from-osx-mountain-lion-with-icecast-and-darkice/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="icecast tutorial">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/notes/2014/10/29/live-stream-audio-from-osx-mountain-lion-with-icecast-and-darkice/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">icecast tutorial</h1>
+  <span class="post-meta">Oct 29, 2014</span><br>
+  
+  <span class="post-meta small">6 minute read</span>
+</div>
+
+<article class="post-content">
+  <h1 id="icecast-and-darkice">icecast and darkice</h1>
+
+<p><a href="http://dzello.com/blog/2012/11/21/live-stream-audio-from-osx-mountain-lion-with-icecast-and-darkice">ICE</a></p>
+
+<p>Any team can benefit from a widely-accessible streaming music server. Sharing the same music increases team flow and builds <a href="http://zachholman.com/talk/play">culture</a>. And funny things happen.</p>
+
+<p>To share both music and announcements, <a href="http://party.io">party.io</a> uses <a href="https://github.com/play/play">Play</a> from Github. Play is an ‘employee-powered iTunes-based client-driven distributed music server for your office’. Our company DJ (a big-hearted, chrome-plated <a href="http://hubot.github.com/">hubot</a>) manages Play and occasionally accepts submissions from the team.</p>
+
+<p>Play syncs the company song queue, but a streaming audio server is still needed to stream what’s playing. There are products that do this; <a href="http://www.rogueamoeba.com/nicecast/">Nicecast</a> is one.</p>
+
+<p>You can also build an open-source frankenstack for free. It’s <em>just</em> four pieces: <a href="http://cycling74.com/products/soundflower/">Soundflower</a>, <a href="http://jackaudio.org/">Jack</a>, <a href="http://darkice.org/">Darkice</a> and <a href="http://www.icecast.org/">Icecast</a>. This post explains how to put these pieces together.</p>
+
+<p>While it’s a little more work, the outcome is the ability to stream <strong>system audio</strong> anywhere. This makes more scenarios possible and it requires less maintenance - there’s no requirement to add media files in advance or to configure any applications.</p>
+
+<p>If you can hear it, you can stream it.</p>
+
+<h3 id="before-starting">Before starting</h3>
+
+<p>You’ll need the latest compiler installed, whether via XCode or the OSX Mountain Lion Command Line Tools installation at <a href="http://connect.apple.com/">http://connect.apple.com/</a> (recommended if you don’t need all of XCode). You’ll need to be somewhat comfortable with working on the <a href="http://en.wikipedia.org/wiki/In_the_Beginning..._Was_the_Command_Line">command line</a>. Make sure you have <a href="http://mxcl.github.com/homebrew/">Homebrew</a> installed. And make sure to run <code>brew update</code> before beginning, and <code>brew doctor</code> if anything goes wrong along the way.</p>
+
+<h3 id="installation-soundflower">Installation: Soundflower</h3>
+
+<p>Soundflower is an inter-application audio routing utility. Soundflower creates additional audio devices that bind to applications to send and receive audio. Soundflower also comes with a program called Soundflowerbed. It lets you listen to audio locally even while broadcasting, like a splitter. Here’s what the Soundflowerbed menu bar app looks like:</p>
+
+<p><img src="/images/soundflowerbed.png" alt="Soundflowerbed" /></p>
+
+<p><a href="http://cycling74.com/soundflower-landing-page/">Download Soundflower here</a> and install it. Homebrew doesn’t have a Soundflower formula AFAIK, but thankfully there’s nothing tricky to this installation.</p>
+
+<p>Once you’ve restarted we’ll install the next component, Jack.</p>
+
+<h3 id="installation-jack">Installation: Jack</h3>
+
+<p>Jack is a professional quality audio tool that can also route audio between applications.</p>
+
+<p>Jack had problems initially with Mac OSX 10.7.3+, but a beta version seems to have worked the bugs out. Neither the Homebrew formula nor the latest download on <a href="http://www.jackosx.com/download.html">jackosx.com</a> have the new code, but you can find it on the Jack-OSX Yahoo group.</p>
+
+<p>There’s a link to the 0.90b8 beta package on <a href="http://tech.groups.yahoo.com/group/jackosx/message/3945">this thread</a>. Download and install it, restarting when necessary.</p>
+
+<p>Next, start the Soundflowerbed app (in /Applications/Soundflower) and choose the ‘Audio Setup’ option from the menu bar icon it installs. This will launch the System Audio Midi Setup menu. Set both input and output to Soundflower (2ch), like in the image below. Also make sure the volume is up.</p>
+
+<p><img src="/images/audiomidisetup.png" alt="Audio Midi Setup" /></p>
+
+<p>Now we can start Jack as follows:</p>
+
+<pre><code>➜  ~  jackdmp -d coreaudio
+jackdmp 1.9.9
+Copyright 2001-2005 Paul Davis and others.
+Copyright 2004-2012 Grame.
+jackdmp comes with ABSOLUTELY NO WARRANTY
+This is free software, and you are welcome to redistribute it
+under certain conditions; see the file COPYING for details
+JACK server starting in realtime mode with priority 10
+Input channel = 0 ==&gt; JACK input port = 0
+Input channel = 1 ==&gt; JACK input port = 1
+JACK output port = 0 ==&gt; output channel = 0
+JACK output port = 1 ==&gt; output channel = 1
+CoreAudio driver is running...
+</code></pre>
+
+<p>Jack will now be running and can pass audio from Soundflower into our next component, Darkice.</p>
+
+<h3 id="installation-darkice">Installation: Darkice</h3>
+
+<p>Darkice is a live audio streamer. In our setup, it’s responsible for encoding the audio from Jack (into MP3, Ogg Vorbis, et. al.) and sending it to Icecast.</p>
+
+<p>We’ll install Darkice with Homebrew but this gets a little weird. Darkice has a dependency on Jack, but Homebrew doesn’t know we’ve already installed Jack through another means. So we have to install a ‘dummy’, unlinked Jack so Homebrew thinks the Jack dependency is satisfied but Darkice builds against the downloaded Jack and not the Homebrew Jack (this is essential).</p>
+
+<p>Run this command:</p>
+
+<pre><code>1
+
+
+brew install darkice --use-llvm   #ignore the linking warnings for Jack - Darkice must complete without Jack linked!
+</code></pre>
+
+<p>During this process Jack will fail to link and issue a warning but the script will still continue. This is good, because Darkice will then build against the downloaded Jack. If things blow up which installing dependencies, install without the llvm flag and then retry this again. The goal is just to get the Jack-failed-link and the Darkice build in the same step.</p>
+
+<h3 id="installation-icecast">Installation: Icecast</h3>
+
+<p>Icecast is the web-serving layer of our stack, accepting incoming client connections and then broadacsting out the stream it receives from Darkice.</p>
+
+<p>Install Icecast with Homebrew.</p>
+
+<pre><code>1
+
+
+brew install icecast
+</code></pre>
+
+<h3 id="running-icecast-and-darkice">Running Icecast and Darkice</h3>
+
+<p>We need a config file for Icecast: download this sample <a href="/images/icecast.xml">icecast.xml</a> I’ve put together for this tutorial into <code>~/.icecast.xml</code>. Now we can start Icecast:</p>
+
+<pre><code>1
+
+
+icecast -c ~/.icecast.xml
+</code></pre>
+
+<p>We also need a config file for darkice: download this sample <a href="/images/darkice.cfg">darkice.cfg</a> into <code>~/.darkice.cfg</code>. Once you have it saved, let’s start Darkice:</p>
+
+<pre><code>1
+
+
+darkice -c ~/.darkice.cfg
+</code></pre>
+
+<p>We can now check our status by logging into Icecast’s administration UI. Go to <a href="http://localhost:8000/admin/">http://localhost:8000/admin/</a> and enter the admin-user and admin-password from the icecast.xml config file. You should arrive at the admin page:</p>
+
+<p><img src="/images/icecast.png" alt="Icecast Admin" /></p>
+
+<p>And you should see an area below that shows the active mount point, created by Darkice:</p>
+
+<p><img src="/images/dubspin.png" alt="Icecast with Darkice mount" /></p>
+
+<h3 id="testing-with-a-client">Testing with a client</h3>
+
+<p>Now, head over to another computer on your network, or your smartphone, and head for to the streaming address we’ve set up. The URL should look something like this:</p>
+
+<pre><code>1
+
+
+http://computer.local:8000/spin
+</code></pre>
+
+<p>Substitute ‘computer.local’ for the hostname or IP address of your computer. ‘spin’ is the name of the mountpoint we specified in darkice.cfg (and 8000 the port).</p>
+
+<p>Paste the URL into Safari on Mac or iOS and you should get playback in iTunes / iOS Quicktime respectively:</p>
+
+<p><img src="/images/itunes.png" alt="Streaming from iTunes" /> <img src="/images/iphone.png" alt="Streaming on iPhone" /></p>
+
+<p>Now you, your team, or the whole Internet can listen to your music, broadcasts, and the output of the command <a href="http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/say.1.html">say</a>! Flex the golden pipes!</p>
+
+<h3 id="configure-your-router">Configure your router</h3>
+
+<p>You won’t be able to access your streaming server from outside your home network unless your open the appropriate ports on your router. In this example, you’d open port 8000. Your router’s instruction manual can you tell you how.</p>
+
+<h3 id="bonus-gist">Bonus Gist</h3>
+
+<p>If you get it all to work, you might want to run these programs in the background and on startup. I wrote up a few basic plist files to be used with launchd that do just that. You can find them in <a href="https://gist.github.com/4126599">this gist</a>.</p>
+
+<h3 id="credits">Credits</h3>
+
+<p>The creators of all of these fine tools. This article: <em><a href="http://www.dudek.org/blog/140">Broadcasting music to multiple speakers</a></em>.</p>
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/05/ROLC%20techarts/" class="post-link">
+        <h4 class="post-title">ROLC techarts</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/04/Migrating%20from%20older%20versions%20of%20Drafts%20%E2%80%93%20Agile%20Tortoise/" class="post-link">
+        <h4 class="post-title">(field 1)</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/04/08-55-38%23%2020141103%20-staff/" class="post-link">
+        <h4 class="post-title">(field 1)</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/04/%E2%80%98Teenage%20Mutant%20Ninja%20Turtles%E2%80%99%20Review:%20Not%20the%20Travesty%20Some%20Feared%20%7C%20Variety/" class="post-link">
+        <h4 class="post-title">‘Teenage Mutant Ninja Turtles’ Review: Not the Travesty Some Feared | Variety</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/11/03/Staff/" class="post-link">
+        <h4 class="post-title">Staff 2014-11-03</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/03/Staff/" class="post-link">
+        <h4 class="post-title">Staff 2014-11-03</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/know/" class="post-link">
+        <h4 class="post-title">Did You Know - Campaign</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

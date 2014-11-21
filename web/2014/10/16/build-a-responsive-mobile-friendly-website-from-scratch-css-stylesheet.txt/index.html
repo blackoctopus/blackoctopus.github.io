@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Scratch Site part 4 of 6 &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="web">
+    <link rel="canonical" href="http://Blackoctopus.github.io/web/2014/10/16/build-a-responsive-mobile-friendly-website-from-scratch-css-stylesheet.txt/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Scratch Site part 4 of 6">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/web/2014/10/16/build-a-responsive-mobile-friendly-website-from-scratch-css-stylesheet.txt/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">Scratch Site part 4 of 6</h1>
+  <span class="post-meta">Oct 16, 2014</span><br>
+  
+  <span class="post-meta small">9 minute read</span>
+</div>
+
+<article class="post-content">
+  <p>From <a href="http://www.sitepoint.com/build-a-responsive-mobile-friendly-website-from-scratch-css-stylesheet/">http://www.sitepoint.com/build-a-responsive-mobile-friendly-website-from-scratch-css-stylesheet/</a>:</p>
+
+<h1 id="build-a-responsive-mobile-friendly-website-from-scratch-css-stylesheet">Build a Responsive, Mobile-Friendly Website From Scratch: CSS stylesheet</h1>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/"> <img src="http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;r=G" alt="" /> </a></p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/">Annarita Tranfici</a></p>
+
+<p>Published May 7, 2013</p>
+
+<p><a href="https://twitter.com/share?text=Build+a+Responsive%2C+Mobile-Friendly+Website+From+Scratch%3A+CSS+stylesheet&amp;via=sitepointdotcom"> __ Tweet </a> <a href="https://confirmsubscription.com/h/y/1FD5B523FA48AA2B"> Subscribe </a></p>
+
+<p>This entry is part 4 of 6 in the series <a href="http://www.sitepoint.com/series/build-a-responsive-mobile-friendly-website-from-scratch/">Build a Responsive, Mobile-Friendly Website From Scratch</a></p>
+
+<p>In the last article of this series, I’ve shown how to start building a website from scratch with a particular focus on the HTML code and its main elements. </p>
+
+<p>Now it’s time to introduce the first CSS rules in order to have a general idea of the graphic style that the homepage of our website will display, especially for the pc-desktop version.</p>
+
+<p>First of all, before having a look on the rules we have to apply in order to create a particular design for our homepage, let’s see how it will appear in our browser window (my default browser is Chrome but, with the application of some specific rules, you’ll be able to obtain the same result for all modern web-browsers).</p>
+
+<p>The homepage of our totally customizable website should look more or less as following:</p>
+
+<p><a href="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/04/website-screenshot-desktop-version.png"><img src="http://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2013/04/website-screenshot-desktop-version-1024x910.png" alt="website-screenshot-desktop-version" /></a>As you can see, I have imagined a very big banner to allow the designer to express all his creativity and chosen colors that combine in a clear and positive way (I really love them!). Having said that, let’s dive deep into the code.</p>
+
+<p>As for the HTML section, in this case we’ll proceed step-by-step from the upper part of our layout to the bottom part. The code for the very first part (which includes the elements of banner, newsletter bar and menu) will be shown piece after piece with a very short comment, as for the other items of the page.</p>
+
+<p>The first one is the banner element, with this code for styling:</p>
+
+<pre><code>#banner
+{
+   width: 100%;
+   margin-top: 0.2em;
+}
+</code></pre>
+
+<p>These first rules simple enough to understand. To space the banner from the top of the browser window we’re applying a margin of 0.2em and to let our banner-image cover all the width of our browser’s window, we’ve set the corresponding rule with a percentage of 100.</p>
+
+<p>Let’s go on with the rules for styling our newsletter-box. In this case we have to pay attention for the rules to put on the id and the ones to consider for the class since I have decided, for personal clarity, to not choose different names for elements that substantially indicate the same part. So, for the class we set a background color (which will be the color of the box and a margin-top of 0.2 em-you’ll find out why it’s better to use these kind of measurements for a responsive website in <a href="http://www.sitepoint.com/understanding-responsive-web-design-how-to-manage-fonts/">this</a> article, which will give you a short overview on the most common units used in Web Design) to slightly space the newsletter-box from the banner above. </p>
+
+<p>The id “newsletter-box”, that is the space where we’ll find the input field and the submit button, has three simple rules, to define the spacing with the box that contains the above-mentioned elements. As you can see, there’s an id (“mobile-newsletter-box”) that seems to be inappropriate to the version we’re analysing. Actually, it’s not so: since there’ll be a change of view when passing from a pc-desktop version to a tablet version or a mobile-phone one, we have to “suggest” to our stylesheet how to perform and display the page elements. </p>
+
+<p>In this case, as you’ll see in the next article when we’ll discuss about the rules to set thinking responsively, the disposition of all the elements characterizing the newsletter bar will totally change. What we have to do now is avoid having the mobile-display shown in the pc-desktop version. To achieve this result, we simply set to the rule “display” the none parameter. </p>
+
+<p>A nice effect I’d like to talk about is the transition I have applied to the white box where the user inserts his e-mail to receive news. Setting to the element a transition, the resulting effect is an enlargement of the box; the other thing I’ve done is to indicate the time that this has to last. This is a CSS3 rule that creates a simple and light movement with a very pleasant output. </p>
+
+<p>The last rule to discuss is the width applied when the newsletter box is clicked: setting this to 17em, the box will appear larger than usual.</p>
+
+<pre><code>.newsletter-box
+{
+   background-color: #c32526;
+   margin-top: 0.2em;
+}
+
+#newsletter-box
+{
+   margin-top: 0.5em;
+   height: 1.8em;
+   padding: 0.3em;
+}
+
+#mobile-newsletter-box
+{
+   display: none;
+}
+
+#newsletter-email
+{
+   width: 12em;
+   -webkit-transition: all 1s;
+   -moz-transition: width 1s;
+   -o-transition: width 1s;
+   -ms-transition: width 1s;
+   transition: width 1s;
+}
+
+#newsletter-email:focus
+{
+   width: 17em;
+}
+</code></pre>
+
+<p>Let’s go on now analyzing our navigation bar. To delete the default bullet points of our menu list, we set the parameter to none, while to center it we recourse to the well-known rule “text-align: center”. Then we change the padding and the margin rules to the size that seems to be appropriate for our purpose. To let the elements of the list appear one after another horizontally, we change the display from the default setting “block” to “inline” and also, in this case, specify the margin parameters. </p>
+
+<p>Now, it’s time to have a look at the rules applied to the link elements: as font, I’ve chosen “Bebas Neue” (you can download it <a href="http://www.dafont.com/bebas-neue.font">here</a>). I’ve set a font-size of 1.3 em, removed the underlining with the rule “text-decoration: none” and set the color I preferred. This color changes when the cursor moves on the menu items and, moreover, when the user clicks on the link of the page he desires to visit, there’s a 3D effect, and you can obtain it setting the rule “position: relative” on the menu links and the parameters top and left on the active state of the same element. In this way, you’ll have a slight movement that will give you the impression of a clickable 3D button.</p>
+
+<pre><code>ul.menu-list
+{
+   list-style-type: none;
+   padding: 0;
+   margin: 1em 0em;
+   text-align: center;
+}
+
+li.menu-item
+{
+   display: inline;
+   margin: 0em 1.5em;
+}
+
+a.menu-item-link
+{
+   font-family: &amp;amp;quot;Bebas Neue&amp;amp;quot;,Calibri,Arial,Helvetica,sans-serif;
+   font-size: 1.3em;
+   text-decoration: none;
+   color: #c31f05;
+position: relative;
+
+}
+
+a.menu-item-link:hover
+{
+   color: #000000;
+}
+
+a.menu-item-link:active
+{
+   top: 0.1em;
+   left: 0.1em;
+}
+
+#menu-select
+{
+   display: none;
+}
+</code></pre>
+
+<p>Now, move on to the general part, that is on the rules applied to elements such as heading, paragraphs, images, boxes appearance and so on. Here is the code with the specifications of the rules for the layout I have thought out, planned and realized.</p>
+
+<pre><code>body
+{
+   max-width: 1024px;
+   margin: 0 auto;
+   font-family: &amp;amp;quot;Cwmagic&amp;amp;quot;,Calibri,Arial,Helvetica,sans-serif;
+   background-color: #E3E3E3;
+   font-size: 1.2em;
+   line-height: 1.5em;
+}
+
+img
+{
+   border: 0em;
+}
+
+h1,
+h2,
+h3
+{
+   text-align: center;
+}
+
+.float-left
+{
+   float: left;
+}
+
+.float-right
+{
+   float: right;
+}
+
+.clear-both
+{
+   clear: both;
+}
+
+.shadow
+{
+   -webkit-box-shadow: 0.4em 0.4em 0.2em #5C5B5B;
+   -moz-box-shadow: 0.4em 0.4em 0.2em #5C5B5B;
+   -o-box-shadow: 0.4em 0.4em 0.2em #5C5B5B;
+   -ms-box-shadow: 0.4em 0.4em 0.2em #5C5B5B;
+   box-shadow: 0.4em 0.4em 0.2em #5C5B5B;
+   margin-right: 0.4em !important;
+}
+
+.long-box,
+.small-box
+{
+   background-color: #cdcdcd;
+   padding: 0em 0.3em;
+   margin: 0em;
+   margin-bottom: 1em;
+}
+
+.small-box
+{
+   width: 47%;
+}
+
+p
+{
+   margin-top: 0;
+   margin-bottom: 0.5em;
+}
+</code></pre>
+
+<p>I won’t explain the rules one by one as for the first part, especially because they are almost all the same. The only thing to which I’d like you’d pay attention is the classes float left, float right and clear both; in fact, I’ve preferred to create a class which “identifies” these rules and applies them to the elements in the HTML code rather than repeating the elements. Another element worthy of note is the CSS3 rule “<a href="http://www.css3.info/preview/box-shadow/">shadow</a>”.</p>
+
+<blockquote>
+  <p>This property allows designers to easily implement multiple drop shadows (outer or inner) on box elements, specifying values for color, size, blur and offset.</p>
+
+  <p>It can accept a comma-separated list of shadows, each defined by 2-4 length values (specifying in order the horizontal offset, vertical offset, optional blur distance and optional spread distance of the shadow), an optional color value and an optional ‘inset‘ keyword (to create an inner shadow, rather than the default outer shadow).</p>
+
+  <p>Browser support is growing of late with Mozilla (Firefox), Webkit (Safari/Chrome/Konqueror), Opera and the IE9 Platform Preview all offering a decent implementation of the specification.</p>
+</blockquote>
+
+<p>Let’s conclude this article with the rules applied to elements present in the footer, that is the footer itself and the bar containing the icons for the linking to the most important social networks’ profile.</p>
+
+<pre><code>#main-footer
+{
+   background-color: #c32526;
+   text-align: center;
+}
+
+.social-bar a
+{
+   text-decoration: none;
+   margin-right: 3em;
+}
+</code></pre>
+
+<p>Finally, let’s see how to manage fonts in the CSS stylesheet, bearing in mind that Internet Explorer requires a different format for the fonts, that is “eot”. Here is the code.</p>
+
+<pre><code>/*
+ ***********************************
+     FONT FOR INTERNET EXPLORER
+ ***********************************
+*/
+@font-face
+{
+   font-family: &amp;amp;quot;Bebas Neue&amp;amp;quot;;
+   src: url(../css/bebasneue.eot);
+}
+
+@font-face
+{
+   font-family: &amp;amp;quot;Palatino Linotype&amp;amp;quot;;
+   src: url(../css/pala.eot);
+}
+/*
+ ***********************************
+       FONT FOR OTHER BROWSERS
+ ***********************************
+*/
+@font-face
+{
+   font-family: &amp;amp;quot;Bebas Neue&amp;amp;quot;;
+   src:
+      local(&amp;amp;quot;Bebas Neue&amp;amp;quot;),
+      local(&amp;amp;quot;Bebas Neue&amp;amp;quot;),
+      url(&amp;amp;quot;../css/bebasneue.ttf&amp;amp;quot;);
+}
+
+@font-face
+{
+   font-family: &amp;amp;quot;Palatino Linotype&amp;amp;quot;;
+   src:
+      local(&amp;amp;quot;Palatino Linotype&amp;amp;quot;),
+      local(&amp;amp;quot;Palatino Linotype&amp;amp;quot;),
+      url(&amp;amp;quot;../css/pala.ttf&amp;amp;quot;);
+}
+</code></pre>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>In this article we’ve seen the basic rules to create a simple layout for a website. After concentrating on the pc-desktop version, in the next part we’ll see which are the rules to apply to make this layout responsive.</p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/"> <img src="http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;r=G" alt="" /> </a></p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/">Annarita Tranfici</a></p>
+
+<p>I have a Bachelor’s degree in European languages, cultures, and literature from the University of Naples. I’m passionate about graphics and web design, and for several years I’ve been working on projects and designs for many companies. I’m a writer for the <a href="http://ug.audero.it/">Audero User Group</a>; my specialties are HTML, CSS, Web Design, and Adobe Photoshop.</p>
+
+<h2 id="you-might-also-like">You might also like:</h2>
+
+<ul>
+  <li>by <a href="http://www.sitepoint.com/author/jraj/">Jay Raj</a></li>
+</ul>
+
+<p>Aug 20, 2014</p>
+
+<ul>
+  <li>by <a href="https://www.sitepoint.com/author/russweakley/">Russ Weakley</a></li>
+</ul>
+
+<p>PREMIUM</p>
+
+<ul>
+  <li>by <a href="http://www.sitepoint.com/author/jaccob/">Jacco Blankenspoor</a></li>
+</ul>
+
+<p>Jun 24, 2014</p>
+
+<p><img src="https://d2sis3lil8ndrq.cloudfront.net/books/jshtml-basics1_medium_3d.png" alt="" /></p>
+
+<p>Grab a free copy of one our latest ebooks! Packed with hints and tips on HTML5’s most powerful new features.</p>
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/05/ROLC%20techarts/" class="post-link">
+        <h4 class="post-title">ROLC techarts</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/04/Migrating%20from%20older%20versions%20of%20Drafts%20%E2%80%93%20Agile%20Tortoise/" class="post-link">
+        <h4 class="post-title">(field 1)</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/04/08-55-38%23%2020141103%20-staff/" class="post-link">
+        <h4 class="post-title">(field 1)</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/04/%E2%80%98Teenage%20Mutant%20Ninja%20Turtles%E2%80%99%20Review:%20Not%20the%20Travesty%20Some%20Feared%20%7C%20Variety/" class="post-link">
+        <h4 class="post-title">‘Teenage Mutant Ninja Turtles’ Review: Not the Travesty Some Feared | Variety</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/11/03/Staff/" class="post-link">
+        <h4 class="post-title">Staff 2014-11-03</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/(notes)/2014/11/03/Staff/" class="post-link">
+        <h4 class="post-title">Staff 2014-11-03</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/know/" class="post-link">
+        <h4 class="post-title">Did You Know - Campaign</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
