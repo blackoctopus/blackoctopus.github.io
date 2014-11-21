@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Website part 1 of 6 &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="webnotes">
+    <link rel="canonical" href="http://Blackoctopus.github.io/3/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Website part 1 of 6">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/3/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        <div class="post">
+  <header class="post-header">
+    <h1 class="h2">Website part 1 of 6</h1>
+  </header>
+  <article class="post-content">
+  <p>From <a href="http://www.sitepoint.com/building-a-responsive-website-introduction/">http://www.sitepoint.com/building-a-responsive-website-introduction/</a>:</p>
+
+<h1 id="build-a-responsive-mobile-friendly-website-from-scratch-introduction">Build a Responsive, Mobile-Friendly Website From Scratch: Introduction</h1>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/"> <img src="http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;r=G" alt="" /> </a></p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/">Annarita Tranfici</a></p>
+
+<p>Published March 25, 2013</p>
+
+<p><a href="https://twitter.com/share?text=Build+a+Responsive%2C+Mobile-Friendly+Website+From+Scratch%3A+Introduction&amp;via=sitepointdotcom"> __ Tweet </a> <a href="https://confirmsubscription.com/h/y/1FD5B523FA48AA2B"> Subscribe </a></p>
+
+<h2 id="this-entry-is-part-1-of-6-in-the-series-build-a-responsive-mobile-friendly-website-from-scratchhttpwwwsitepointcomseriesbuild-a-responsive-mobile-friendly-website-from-scratch">This entry is part 1 of 6 in the series <a href="http://www.sitepoint.com/series/build-a-responsive-mobile-friendly-website-from-scratch/">Build a Responsive, Mobile-Friendly Website From Scratch</a></h2>
+
+<p>In the last series (“<a href="http://www.sitepoint.com/series/understanding-responsive-web-design/">Understanding Responsive Web Design</a>”), I defined the basic features of this new and important responsive approach to mobile-friendly, device-agnostic design. Now, let’s set the stage for a more concrete work.</p>
+
+<p>We’ve seen that there are many aspects to take into consideration throughout the responsive design process: screen size, operating platform, user behavior, and so on. We have explored the various measurement options for fonts in a website, and we’ve covered the best way to approach <a href="http://www.sitepoint.com/understanding-responsive-web-design-how-to-manage-fonts/">typography</a> in terms of responsive web design. We’ve explored the characteristics of four different <a href="http://www.sitepoint.com/responsive-web-design-fluid-layouts/">layout types</a> and their respective fields of implementation. We’ve covered some common problems that a web designer may encounter when managing responsive <a href="http://www.sitepoint.com/understanding-responsive-web-design-how-to-manage-images/">images</a> (and pointed out potential solutions). Finally, we’ve explored the problem of <a href="http://www.sitepoint.com/understanding-responsive-web-design-cross-browser-compatibility/">cross-browser compatibility</a> and proposed different ways to achieve it.</p>
+
+<p>Now it’s time to demonstrate some <strong>real-world technical applications</strong> of the responsive web design and build a real responsive website.</p>
+
+<h3 id="objectives">Objectives</h3>
+
+<p>Let’s start with defining the objectives of this new series, and highlight what you’ll learn. Thanks to this tutorial…</p>
+
+<ol>
+  <li>You’ll learn how to create a responsive design mockup, taking into account the main features of a website, the users’ needs, and the way to effectively combine responsive graphics and web design. The mockup of the website won’t be unique to one platform, and it’ll provide an example of the possible structure of a portal from several standpoints—imagining the view on three different devices: smartphones, tablets, and desktop PCs.</li>
+  <li>You’ll learn how to take full advantage of modern web technologies, namely HTML5 and CSS3, applying them step-by-step to each component of your web content.</li>
+  <li>You’ll see how to implement some rules related to responsive web design, by applying what we have analyzed conceptually in prior articles.</li>
+</ol>
+
+<h3 id="media-queries">Media Queries</h3>
+
+<p>One of the foundations or responsive design is <strong>media queries</strong>, which ultimately make the site accessible and usable by the largest number of users, including those who do not use recent versions of popular browsers such as Internet Explorer, Mozilla Firefox, and Chrome.</p>
+
+<p>Let’s start by getting our hands dirty with media queries; they represent one the most important tools that a web designer has to make their website responsive and mobile-friendly.</p>
+
+<p>Media queries are composed of <strong>two main parts</strong>:</p>
+
+<ul>
+  <li><strong>@ media screen</strong> — The first part of a media query is the type of support. You might recognize this syntax from writing your own CSS styles, especially if you used this method before when designing printing options for your website.</li>
+  <li>(<strong>min-width: 500px</strong>) — The second part is the query itself. It includes the function to be evaluated (in this case, the minimum width of the browser window) and the corresponding value to test that the rule has been applied (in this case, a value of 500px).</li>
+</ul>
+
+<p>Thinking about responsive web design, there is a tendency to focus exclusively on the width property, but there quite a few other attributes to consider when designing for a variety of screen sizes. There are many more valid properties associated with media queries. They are:</p>
+
+<ol>
+  <li><strong>width / height</strong> — With these properties, you can set the width and height of the display area including any scroll bar. You can use the prefixes min and max.</li>
+  <li><strong>device-width/height</strong> — These properties set the width and the height of the rendering surface, that is, the width and height of the entire screen of the device and not simply of the display area of the document. Even in this case, you can still use the min and max prefixes.</li>
+  <li><strong>orientation</strong> — it sets a vertical or horizontal orientation. By specifying particular rules in the CSS stylesheet, you will be able to define how the various elements of a web page will be displayed on the device, in this case, depending on the orientation of the device we use. We can then specify the type of orientation; landscape and portrait that allow us to change the layout of your design according to the current orientation of the browser.</li>
+  <li><strong>aspect-ratio</strong> — This is a property that sets the ratio between the width and height of the display of a document. Even in this case, you can <em>still</em> use the min and max prefixes.</li>
+  <li><strong>device-aspect-ratio</strong> — This attribute monitors the ratio between the width and height of the device. Prefixes min and max are allowed.</li>
+  <li><strong>color</strong> — This applies certain CSS styles for all color devices. Prefixes min and max are allowed, but very few black and white devices (besides inexpensive Kindles) remain as popular browsing options</li>
+  <li><strong>color-index</strong> — This describes the number of colors in the palette supported by a device. It can have min and max prefixes.</li>
+  <li><strong>monochrome</strong> — This property indicates the number of bits per pixel of a monochrome device (grayscale).</li>
+  <li><strong>resolution —</strong> Resolution sets the resolution (i.e. the density of pixels) of the output device. The values ​​of the resolution can be expressed in DPI (dots per inch) or in DPCM (dots per centimeter).</li>
+  <li><strong>scan</strong> — a valid property for television screens that indicates the type of scan, interlaced or progressive. The values ​​can be precisely progressive or interlaced.</li>
+  <li><strong>grid</strong> — Grid indicates whether the device is a bitmap type or a “grid” equivalent.</li>
+</ol>
+
+<h3 id="breakpoints">Breakpoints</h3>
+
+<p>After this short overview of the main (and often underutilized) properties of media queries, let’s proceed by pointing out what are the best responsive <strong>breakpoints</strong> and how to determine them for a given project.</p>
+
+<p>Breakpoints in terms of responsive web design are browser widths that have a media query declaration to change the layout once the browser is within a declared width range. More specifically, a breakpoint is a point on a line that starts from 0, where there is a change (via CSS) within the layout of the page. Breakpoints are defined with numeric values ​​and units of measurement based on the media queries entered into your CSS stylesheets.</p>
+
+<p>In general, every responsive website has a minimum of two breakpoints — one for tablets and one for mobile devices. Each breakpoint corresponds to a media query. In the media query below, I wrote CSS that only takes effect when the minimum width of the browser window (min-width) is equal to a specific value (that can be 320px, 480px, 768px, etc..).</p>
+
+<p>Here is an example of one of these standard breakpoints:</p>
+
+<pre><code>@media only screen and (min-width : 320px) {
+
+/* Styles */
+
+}
+</code></pre>
+
+<p>But, <strong>how many breakpoints does a web designer need to create?</strong> This depends on the characteristics of the website, on its layout, and on the techniques that you decided to implement in order to turn your design plans into something truly interactive and responsive In essence, we could answer the previous question in this way: You need a breakpoint for every device that you deliberately choose to support.</p>
+
+<h4 id="breakpoints-according-to-the-devices">Breakpoints According to the Devices</h4>
+
+<p>Today, the prevailing practice tends to set breakpoints based on the size of the screen (or browser window) of the following popular device types:</p>
+
+<ul>
+  <li>Smartphone (with portrait or landscape orientation)</li>
+  <li>Tablet (with portrait or landscape orientation as well)</li>
+  <li>Netbook</li>
+  <li>Desktop PC monitor with high or very high resolution</li>
+</ul>
+
+<p>Translating this scheme into pixels, you can see how for smartphone and tablet categories, the “standard” sizes adopted mainly correspond to the screen dimensions of the iPhone and iPad:</p>
+
+<ul>
+  <li>320px — iPhone in portrait orientation</li>
+  <li>480px — iPhone in landscape orientation</li>
+  <li>768px — iPad in portrait orientation</li>
+  <li>1024px — iPad in landscape orientation (as well as netbooks, since these devices typically have a horizontal resolution of 1024px).</li>
+</ul>
+
+<p>Someone might argue that not all smartphones and tablets are iPhones or iPads, and they’d be unquestionably correct. But, in this case the screen size of the Apple device is used more as a reference point for a greater category of devices. Moreover, creating a breakpoint for each and every device would be totally absurd.</p>
+
+<p>A good practice could be defining a set of main breakpoints possibly combined with some secondary breakpoints in order to fit the document to specific devices. You could also think about creating a custom breakpoint; this is very straightforward but requires a familiarity with media queries, so I suggest practicing initially with basic media queries and common breakpoints.</p>
+
+<p>It’s extremely important to test your dynamic layouts, including the breakpoints themselves, and the CSS that executes under certain screen size conditions. If you do not have both of those aspects of your responsive design in good order, you’ll end up with glaring layout and functionality problems that make your website less responsive than if you hadn’t attempted any mobile-friendly accommodations. Test your designs thoroughly!</p>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>I have introduced the main objectives of the series, and above all, I have given a short but complete introduction on the critical components of media queries and responsive breakpoints. In the next article, I’ll start with the planning and the creation of a mockup for each of the three main device types on which our website will be designed, tested, and displayed.</p>
+
+<p><em>Want to learn more about Responsive Web Design? Check out SitePoint’s new book, <a href="http://www.sitepoint.com/books/responsive1/">Jump Start Responsive Web Design</a>!</em></p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/"> <img src="http://0.gravatar.com/avatar/42bd81912daf039b7faa53dbf9efcb25?s=96&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D96&amp;r=G" alt="" /> </a></p>
+
+<p><a href="http://www.sitepoint.com/author/atranfici/">Annarita Tranfici</a></p>
+
+<p>I have a Bachelor’s degree in European languages, cultures, and literature from the University of Naples. I’m passionate about graphics and web design, and for several years I’ve been working on projects and designs for many companies. I’m a writer for the <a href="http://ug.audero.it/">Audero User Group</a>; my specialties are HTML, CSS, Web Design, and Adobe Photoshop.</p>
+
+<h2 id="you-might-also-like">You might also like:</h2>
+
+<ul>
+  <li>by <a href="http://www.sitepoint.com/author/jechessa/">Joyce Echessa</a></li>
+</ul>
+
+<p>Feb 10, 2014</p>
+
+<p><img src="https://d2sis3lil8ndrq.cloudfront.net/books/jshtml-basics1_medium_3d.png" alt="" /></p>
+
+<p>Grab a free copy of one our latest ebooks! Packed with hints and tips on HTML5’s most powerful new features.</p>
+
+  </article>
+</div>
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
