@@ -1,0 +1,38 @@
+
+<p>Brett code</p>
+
+<p>https://s3-us-west-2.amazonaws.com/droplr.storage/files/acc_210/XGez?AWSAccessKeyId=AKIAJSVQN3Z4K7MT5U2A&amp;Expires=1400175983&amp;Signature=lktzewM9OFDt7MUBLQN8pvPPu1Q%3D&amp;response-content-disposition=attachment%3B%20filename%3Dparens.rb%3B</p>
+
+<h1 id="usrbinenv-ruby">!/usr/bin/env ruby</h1>
+
+<p>if RUBY_VERSION.to_f &gt; 1.9
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+end</p>
+
+<p>if ARGV.length == 0 &amp;&amp; STDIN.stat.size == 0
+  puts “You have to pipe something in or pass a filename”
+elsif ARGV.length &gt; 0
+  input = “”
+  ARGV.each {|f|
+    if File.exists?(File.expand_path(f))
+      input += IO.read(f).force_encoding(‘utf-8’)
+    else
+      puts “File #{f} does not exist”
+      Process.exit 1
+    end
+  }
+else
+  input = STDIN.read.force_encoding(‘utf-8’)
+end</p>
+
+<p>Process.exit 1 unless input.length &gt; 0</p>
+
+<p>matches = input.scan(/((.*?))/)</p>
+
+<p>matches.each {|m|
+  puts “- #{m[0]}”
+}</p>
+
+<hr />
+<p>Revision [[20140515]]</p>

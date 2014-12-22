@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Configuration &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://Blackoctopus.github.io/jekyll/2014/10/09/Configuration/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Configuration">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/jekyll/2014/10/09/Configuration/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">Configuration</h1>
+  <span class="post-meta">Oct 9, 2014</span><br>
+  
+  <span class="post-meta small">10 minute read</span>
+</div>
+
+<article class="post-content">
+  <p>From <a href="http://jekyllrb.com/docs/configuration/">http://jekyllrb.com/docs/configuration/</a>:</p>
+
+<h1 id="configuration">Configuration</h1>
+
+<p>Jekyll allows you to concoct your sites in any way you can dream up, and it’s thanks to the powerful and flexible configuration options that this is possible. These options can either be specified in a <code>_config.yml</code> file placed in your site’s root directory, or can be specified as flags for the <code>jekyll</code> executable in the terminal.</p>
+
+<h2 id="configuration-settings">Configuration Settings</h2>
+
+<h3 id="global-configuration">Global Configuration</h3>
+
+<p>The table below lists the available settings for Jekyll, and the various <code>options</code> (specified in the configuration file) and <code>flags</code> (specified on the command-line) that control them.</p>
+
+<p>Setting Options and Flags</p>
+
+<p><strong>Site Source</strong></p>
+
+<p>Change the directory where Jekyll will read files</p>
+
+<p><code>source: DIR</code></p>
+
+<p><code>-s, --source DIR</code></p>
+
+<p><strong>Site Destination</strong></p>
+
+<p>Change the directory where Jekyll will write files</p>
+
+<p><code>destination: DIR</code></p>
+
+<p><code>-d, --destination DIR</code></p>
+
+<p><strong>Safe</strong></p>
+
+<p>Disable <a href="../plugins/">custom plugins, and ignore symbolic links</a>.</p>
+
+<p><code>safe: BOOL</code></p>
+
+<p><code>--safe</code></p>
+
+<p><strong>Exclude</strong></p>
+
+<p>Exclude directories and/or files from the conversion. These exclusions are relative to the site’s source directory and cannot be outside the source directory. </p>
+
+<p><code>exclude: [DIR, FILE, ...]</code></p>
+
+<p><strong>Include</strong></p>
+
+<p>Force inclusion of directories and/or files in the conversion. <code>.htaccess</code> is a good example since dotfiles are excluded by default. </p>
+
+<p><code>include: [DIR, FILE, ...]</code></p>
+
+<p><strong>Time Zone</strong></p>
+
+<p>Set the time zone for site generation. This sets the <code>TZ</code> environment variable, which Ruby uses to handle time and date creation and manipulation. Any entry from the <a href="http://en.wikipedia.org/wiki/Tz_database">IANA Time Zone Database</a> is valid, e.g. <code>America/New_York</code>. A list of all available values can be found <a href="http://en.wikipedia.org/wiki/List_of_tz_database_time_zones"> here</a>. The default is the local time zone, as set by your operating system. </p>
+
+<p><code>timezone: TIMEZONE</code></p>
+
+<p><strong>Encoding</strong></p>
+
+<p>Set the encoding of files by name. Only available for Ruby 1.9 or later). The default value is <code>utf-8</code> starting in 2.0.0, and <code>nil</code> before 2.0.0, which will yield the Ruby default of <code>ASCII-8BIT</code>. Available encodings can be shown by the command <code>ruby -e 'puts Encoding::list.join("\n")'</code>. </p>
+
+<p><code>encoding: ENCODING</code></p>
+
+<p><strong>Defaults</strong></p>
+
+<p>Set defaults for <a href="../frontmatter/">YAML Front Matter</a> variables. </p>
+
+<p>see below</p>
+
+<h3 id="build-command-options">Build Command Options</h3>
+
+<p>Setting Options and Flags</p>
+
+<p><strong>Regeneration</strong></p>
+
+<p>Enable auto-regeneration of the site when files are modified.</p>
+
+<p><code>-w, --watch</code></p>
+
+<p><strong>Configuration</strong></p>
+
+<p>Specify config files instead of using <code>_config.yml</code> automatically. Settings in later files override settings in earlier files.</p>
+
+<p><code>--config FILE1[,FILE2,...]</code></p>
+
+<p><strong>Drafts</strong></p>
+
+<p>Process and render draft posts.</p>
+
+<p><code>--drafts</code></p>
+
+<p><strong>Future</strong></p>
+
+<p>Publish posts with a future date.</p>
+
+<p><code>future: BOOL</code></p>
+
+<p><code>--future</code></p>
+
+<p><strong>LSI</strong></p>
+
+<p>Produce an index for related posts.</p>
+
+<p><code>lsi: BOOL</code></p>
+
+<p><code>--lsi</code></p>
+
+<p><strong>Limit Posts</strong></p>
+
+<p>Limit the number of posts to parse and publish.</p>
+
+<p><code>limit_posts: NUM</code></p>
+
+<p><code>--limit_posts NUM</code></p>
+
+<p><strong>Force polling</strong></p>
+
+<p>Force watch to use polling.</p>
+
+<p><code>--force_polling</code></p>
+
+<h3 id="serve-command-options">Serve Command Options</h3>
+
+<p>In addition to the options below, the <code>serve</code> sub-command can accept any of the options for the <code>build</code> sub-command, which are then applied to the site build which occurs right before your site is served.</p>
+
+<p>Setting Options and Flags</p>
+
+<p><strong>Local Server Port</strong></p>
+
+<p>Listen on the given port.</p>
+
+<p><code>port: PORT</code></p>
+
+<p><code>--port PORT</code></p>
+
+<p><strong>Local Server Hostname</strong></p>
+
+<p>Listen at the given hostname.</p>
+
+<p><code>host: HOSTNAME</code></p>
+
+<p><code>--host HOSTNAME</code></p>
+
+<p><strong>Base URL</strong></p>
+
+<p>Serve the website from the given base URL</p>
+
+<p><code>baseurl: URL</code></p>
+
+<p><code>--baseurl URL</code></p>
+
+<p><strong>Detach</strong></p>
+
+<p>Detach the server from the terminal</p>
+
+<p><code>detach: BOOL</code></p>
+
+<p><code>-B, --detach</code></p>
+
+<h5 id="do-not-use-tabs-in-configuration-files">Do not use tabs in configuration files</h5>
+
+<p>This will either lead to parsing errors, or Jekyll will revert to the default settings. Use spaces instead. </p>
+
+<h2 id="front-matter-defaults">Front Matter defaults</h2>
+
+<p>Using <a href="../frontmatter/">YAML Front Matter</a> is one way that you can specify configuration in the pages and posts for your site. Setting things like a default layout, or customizing the title, or specifying a more precise date/time for the post can all be added to your page or post front matter.</p>
+
+<p>Often times, you will find that you are repeating a lot of configuration options. Setting the same layout in each file, adding the same category - or categories - to a post, etc. You can even add custom variables like author names, which might be the same for the majority of posts on your blog.</p>
+
+<p>Instead of repeating this configuration each time you create a new post or page, Jekyll provides a way to set these defaults in the site configuration. To do this, you can specify site-wide defaults using the <code>defaults</code> key in the <code>_config.yml</code> file in your projects root directory.</p>
+
+<p>The <code>defaults</code> key holds an array of scope/values pairs that define what defaults should be set for a particular file path, and optionally, a file type in that path.</p>
+
+<p>Let’s say that you want to add a default layout to all pages and posts in your site. You would add this to your <code>_config.yml</code> file:</p>
+
+<pre><code>defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+</code></pre>
+
+<p>Here, we are scoping the <code>values</code> to any file that exists in the scopes path. Since the path is set as an empty string, it will apply to <strong>all files</strong> in your project. You probably don’t want to set a layout on every file in your project - like css files, for example - so you can also specify a <code>type</code> value under the <code>scope</code> key.</p>
+
+<pre><code>defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      layout: "default"
+</code></pre>
+
+<p>Now, this will only set the layout for files where the type is <code>posts</code>. The different types that are available to you are <code>pages</code>, <code>posts</code>, <code>drafts</code> or any collection in your site. While <code>type</code> is optional, you must specify a value for <code>path</code> when creating a <code>scope/values</code> pair.</p>
+
+<p>As mentioned earlier, you can set multiple scope/values pairs for <code>defaults</code>.</p>
+
+<pre><code>defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "my-site"
+  -
+    scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project" # overrides previous default layout
+      author: "Mr. Hyde"
+</code></pre>
+
+<p>With these defaults, all posts would use the <code>my-site</code> layout. Any html files that exist in the <code>projects/</code> folder will use the <code>project</code> layout, if it exists. Those files will also have the <code>page.author</code> <a href="../variables/">liquid variable</a> set to <code>Mr. Hyde</code> as well as have the category for the page set to <code>project</code>.</p>
+
+<pre><code>collections:
+  - my_collection:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "my_collection" # a collection in your site, in plural form
+    values:
+      layout: "default"
+</code></pre>
+
+<p>In this example the <code>layout</code> is set to <code>default</code> inside the <a href="../collections">collection</a> with the name <code>my_collection</code>.</p>
+
+<h3 id="precedence">Precedence</h3>
+
+<p>Jekyll will apply all of the configuration settings you specify in the <code>defaults</code> section of your <code>_config.yml</code> file. However, you can choose to override settings from other scope/values pair by specifying a more specific path for the scope.</p>
+
+<p>You can see that in the last example above. First, we set the default layout to <code>my-site</code>. Then, using a more specific path, we set the default layout for files in the <code>projects/</code> path to <code>project</code>. This can be done with any value that you would set in the page or post front matter.</p>
+
+<p>Finally, if you set defaults in the site configuration by adding a <code>defaults</code> section to your <code>_config.yml</code> file, you can override those settings in a post or page file. All you need to do is specify the settings in the post or page front matter. For example:</p>
+
+<pre><code># In _config.yml
+...
+defaults:
+  -
+    scope:
+      path: "projects"
+      type: "pages"
+    values:
+      layout: "project"
+      author: "Mr. Hyde"
+      category: "project"
+...
+
+# In projects/foo_project.md
+---
+author: "John Smith"
+layout: "foobar"
+---
+The post text goes here...
+</code></pre>
+
+<p>The <code>projects/foo_project.md</code> would have the <code>layout</code> set to <code>foobar</code> instead of <code>project</code> and the <code>author</code> set to <code>John Smith</code> instead of <code>Mr. Hyde</code> when the site is built.</p>
+
+<h2 id="default-configuration">Default Configuration</h2>
+
+<p>Jekyll runs with the following configuration options by default. Unless alternative settings for these options are explicitly specified in the configuration file or on the command-line, Jekyll will run using these options.</p>
+
+<h5 id="there-are-two-unsupported-kramdown-options">There are two unsupported kramdown options</h5>
+
+<p>Please note that both <code>remove_block_html_tags</code> and <code>remove_span_html_tags</code> are currently unsupported in Jekyll due to the fact that they are not included within the kramdown HTML converter. </p>
+
+<pre><code># Where things are
+source:      .
+destination: ./_site
+plugins:     ./_plugins
+layouts:     ./_layouts
+data_source: ./_data
+collections: null
+
+# Handling Reading
+safe:         false
+include:      [".htaccess"]
+exclude:      []
+keep_files:   [".git", ".svn"]
+encoding:     "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+textile_ext:  "textile"
+
+# Filtering Content
+show_drafts: null
+limit_posts: 0
+future:      true
+unpublished: false
+
+# Plugins
+whitelist: []
+gems:      []
+
+# Conversion
+markdown:    kramdown
+highlighter: pygments
+lsi:         false
+excerpt_separator: "\n\n"
+
+# Serving
+detach:  false
+port:    4000
+host:    0.0.0.0
+baseurl: "" # does not include hostname
+
+# Backwards-compatibility
+relative_permalinks: false
+
+# Outputting
+permalink:     date
+paginate_path: /page:num
+timezone:      null
+
+quiet:    false
+defaults: []
+
+# Markdown Processors
+maruku:
+  use_tex:    false
+  use_divs:   false
+  png_engine: blahtex
+  png_dir:    images/latex
+  png_url:    /images/latex
+  fenced_code_blocks: true
+
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+
+kramdown:
+  auto_ids:      true
+  footnote_nr:   1
+  entity_output: as_char
+  toc_levels:    1..6
+  smart_quotes:  lsquo,rsquo,ldquo,rdquo
+  use_coderay:   false
+
+  coderay:
+    coderay_wrap:              div
+    coderay_line_numbers:      inline
+    coderay_line_number_start: 1
+    coderay_tab_width:         4
+    coderay_bold_every:        10
+    coderay_css:               style
+
+redcloth:
+  hard_breaks: true
+</code></pre>
+
+<h2 id="markdown-options">Markdown Options</h2>
+
+<p>The various Markdown renderers supported by Jekyll sometimes have extra options available.</p>
+
+<h3 id="redcarpet">Redcarpet</h3>
+
+<p>Redcarpet can be configured by providing an <code>extensions</code> sub-setting, whose value should be an array of strings. Each string should be the name of one of the <code>Redcarpet::Markdown</code> class’s extensions; if present in the array, it will set the corresponding extension to <code>true</code>.</p>
+
+<p>Jekyll handles two special Redcarpet extensions:</p>
+
+<ul>
+  <li><code>no_fenced_code_blocks</code> — By default, Jekyll sets the <code>fenced_code_blocks</code> extension (for delimiting code blocks with triple tildes or triple backticks) to <code>true</code>, probably because GitHub’s eager adoption of them is starting to make them inescapable. Redcarpet’s normal <code>fenced_code_blocks</code> extension is inert when used with Jekyll; instead, you can use this inverted version of the extension for disabling fenced code.</li>
+</ul>
+
+<p>Note that you can also specify a language for highlighting after the first delimiter:</p>
+
+<pre><code>    ```ruby
+    # ...ruby code
+    ```
+</code></pre>
+
+<p>With both fenced code blocks and highlighter enabled, this will statically highlight the code; without any syntax highlighter, it will add a <code>class="LANGUAGE"</code> attribute to the <code>&lt;code&gt;</code> element, which can be used as a hint by various JavaScript code highlighting libraries.</p>
+
+<ul>
+  <li><code>smart</code> — This pseudo-extension turns on SmartyPants, which converts straight quotes to curly quotes and runs of hyphens to em (<code>---</code>) and en (<code>--</code>) dashes.</li>
+</ul>
+
+<p>All other extensions retain their usual names from Redcarpet, and no renderer options aside from <code>smart</code> can be specified in Jekyll. <a href="https://github.com/vmg/redcarpet/blob/v2.2.2/README.markdown#and-its-like-really-simple-to-use">A list of available extensions can be found in the Redcarpet README file.</a> Make sure you’re looking at the README for the right version of Redcarpet: Jekyll currently uses v2.2.x, and extensions like <code>footnotes</code> and <code>highlight</code> weren’t added until after version 3.0.0. The most commonly used extensions are:</p>
+
+<ul>
+  <li><code>tables</code></li>
+  <li><code>no_intra_emphasis</code></li>
+  <li><code>autolink</code></li>
+</ul>
+
+<h3 id="kramdown">Kramdown</h3>
+
+<p>In addition to the defaults mentioned above, you can also turn on recognition of Github Flavored Markdown by passing an <code>input</code> option with a value of “GFM”.</p>
+
+<p>For example, in your <code>_config.yml</code>:</p>
+
+<pre><code>kramdown:
+  input: GFM
+</code></pre>
+
+<h3 id="custom-markdown-processors">Custom Markdown Processors</h3>
+
+<p>If you’re interested in creating a custom markdown processor, you’re in luck! Create a new class in the <code>Jekyll::Converters::Markdown</code> namespace:</p>
+
+<pre><code>class Jekyll::Converters::Markdown::MyCustomProcessor
+  def initialize(config)
+    require 'funky_markdown'
+    @config = config
+  rescue LoadError
+    STDERR.puts 'You are missing a library required for Markdown. Please run:'
+    STDERR.puts '  $ [sudo] gem install funky_markdown'
+    raise FatalException.new("Missing dependency: funky_markdown")
+  end
+
+  def convert(content)
+    ::FunkyMarkdown.new(content).convert
+  end
+end
+</code></pre>
+
+<p>Once you’ve created your class and have it properly setup either as a plugin in the <code>_plugins</code> folder or as a gem, specify it in your <code>_config.yml</code>:</p>
+
+<pre><code>markdown: MyCustomProcessor
+</code></pre>
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

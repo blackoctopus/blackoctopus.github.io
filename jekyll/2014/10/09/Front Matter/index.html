@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Front Matter &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="jekyll">
+    <link rel="canonical" href="http://Blackoctopus.github.io/jekyll/2014/10/09/Front%20Matter/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Front Matter">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/jekyll/2014/10/09/Front%20Matter/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">Front Matter</h1>
+  <span class="post-meta">Oct 9, 2014</span><br>
+  
+  <span class="post-meta small">3 minute read</span>
+</div>
+
+<article class="post-content">
+  <p>From <a href="http://jekyllrb.com/docs/frontmatter/">http://jekyllrb.com/docs/frontmatter/</a>:</p>
+
+<h1 id="front-matter">Front Matter</h1>
+
+<p>The front matter is where Jekyll starts to get really cool. Any file that contains a <a href="http://yaml.org/">YAML</a> front matter block will be processed by Jekyll as a special file. The front matter must be the first thing in the file and must take the form of valid YAML set between triple-dashed lines. Here is a basic example:</p>
+
+<pre><code>---
+layout: post
+title: Blogging Like a Hacker
+---
+</code></pre>
+
+<p>Between these triple-dashed lines, you can set predefined variables (see below for a reference) or even create custom ones of your own. These variables will then be available to you to access using Liquid tags both further down in the file and also in any layouts or includes that the page or post in question relies on.</p>
+
+<h5 id="utf-8-character-encoding-warning">UTF-8 Character Encoding Warning</h5>
+
+<p>If you use UTF-8 encoding, make sure that no <code>BOM</code> header characters exist in your files or very, very bad things will happen to Jekyll. This is especially relevant if you’re running <a href="../windows/">Jekyll on Windows</a>. </p>
+
+<h5 id="protip-front-matter-variables-are-optional">ProTip™: Front Matter Variables Are Optional</h5>
+
+<p>If you want to use <a href="../variables/">Liquid tags and variables</a> but don’t need anything in your front matter, just leave it empty! The set of triple-dashed lines with nothing in between will still get Jekyll to process your file. (This is useful for things like CSS and RSS feeds!) </p>
+
+<h2 id="predefined-global-variables">Predefined Global Variables</h2>
+
+<p>There are a number of predefined global variables that you can set in the front matter of a page or post.</p>
+
+<p>Variable Description</p>
+
+<p><code>layout</code></p>
+
+<p>If set, this specifies the layout file to use. Use the layout file name without the file extension. Layout files must be placed in the <code>_layouts</code> directory. </p>
+
+<p><code>permalink</code></p>
+
+<p>If you need your processed blog post URLs to be something other than the default <code>/year/month/day/title.html</code> then you can set this variable and it will be used as the final URL. </p>
+
+<p><code>published</code></p>
+
+<p>Set to false if you don’t want a specific post to show up when the site is generated. </p>
+
+<p><code>category</code></p>
+
+<p><code>categories</code></p>
+
+<p>Instead of placing posts inside of folders, you can specify one or more categories that the post belongs to. When the site is generated the post will act as though it had been set with these categories normally. Categories (plural key) can be specified as a <a href="http://en.wikipedia.org/wiki/YAML#Lists">YAML list</a> or a space-separated string. </p>
+
+<p><code>tags</code></p>
+
+<p>Similar to categories, one or multiple tags can be added to a post. Also like categories, tags can be specified as a YAML list or a space- separated string. </p>
+
+<h2 id="custom-variables">Custom Variables</h2>
+
+<p>Any variables in the front matter that are not predefined are mixed into the data that is sent to the Liquid templating engine during the conversion. For instance, if you set a title, you can use that in your layout to set the page title:</p>
+
+<pre><code>&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Front Matter&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    ...
+</code></pre>
+
+<h2 id="predefined-variables-for-posts">Predefined Variables for Posts</h2>
+
+<p>These are available out-of-the-box to be used in the front matter for a post.</p>
+
+<p>Variable Description</p>
+
+<p><code>date</code></p>
+
+<p>A date here overrides the date from the name of the post. This can be used to ensure correct sorting of posts. </p>
+
+<h5 id="protip-dont-repeat-yourself">ProTip™: Don’t repeat yourself</h5>
+
+<p>If you don’t want to repeat your frequently used front matter variables over and over, just define <a href="../configuration/#front-matter-defaults">defaults</a> for them and only override them where necessary (or not at all). This works both for predefined and custom variables. </p>
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

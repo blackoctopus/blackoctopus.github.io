@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SASS CSS &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="web">
+    <link rel="canonical" href="http://Blackoctopus.github.io/web/2014/10/10/SASS/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="SASS CSS">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/web/2014/10/10/SASS/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">SASS CSS</h1>
+  <span class="post-meta">Oct 10, 2014</span><br>
+  
+  <span class="post-meta small">7 minute read</span>
+</div>
+
+<article class="post-content">
+  <p><a href="http://sass-lang.com/guide" title="Permalink to Sass: Sass Basics">Source</a></p>
+
+<h1 id="sass-sass-basics">Sass: Sass Basics</h1>
+
+<p>Before you can use Sass, you need to set it up on your project. If you want to just browse here, go ahead, but we recommend you go install Sass first. <a href="http://sass-lang.com/install">Go here</a> if you want to learn how to get everything setup.</p>
+
+<ul>
+  <li>
+    <h2 id="pre-processing">Pre-processing</h2>
+  </li>
+</ul>
+
+<p>CSS on its own can be fun, but stylesheets are getting larger, more complex, and harder to maintain. This is where a preprocessor can help. Sass lets you use features that don’t exist in CSS yet like variables, nesting, mixins, inheritance and other nifty goodies that make writing CSS fun again.</p>
+
+<p>Once you start tinkering with Sass, it will take your preprocessed Sass file and save it out as a normal CSS file that you can use in your web site.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="variables">Variables</h2>
+  </li>
+</ul>
+
+<p>Think of variables as a way to store information that you want to reuse throughout your stylesheet. You can store things like colors, font stacks, or any CSS value you think you’ll want to reuse. Sass uses the <code>$</code> symbol to make something a variable. Here’s an example:</p>
+
+<h3 id="scss-syntax">SCSS Syntax</h3>
+
+<pre><code>$font-stack:    Helvetica, sans-serif;
+$primary-color: #333;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+}
+</code></pre>
+
+<h3 id="sass-syntax">Sass Syntax</h3>
+
+<pre><code>$font-stack:    Helvetica, sans-serif
+$primary-color: #333
+
+body
+  font: 100% $font-stack
+  color: $primary-color
+</code></pre>
+
+<p>When the Sass is processed, it takes the variables we define for the <code>$font-stack</code> and <code>$primary-color</code> and outputs normal CSS with our variable values placed in the CSS. This can be extremely powerful when working with brand colors and keeping them consistent throughout the site.</p>
+
+<pre><code>body {
+  font: 100% Helvetica, sans-serif;
+  color: #333;
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="nesting">Nesting</h2>
+  </li>
+</ul>
+
+<p>When writing HTML you’ve probably noticed that it has a clear nested and visual hierarchy. CSS, on the other hand, doesn’t.</p>
+
+<p>Sass will let you nest your CSS selectors in a way that follows the same visual hierarchy of your HTML. Be aware that overly nested rules will result in over-qualified CSS that could prove hard to maintain and is generally considered bad practice.</p>
+
+<p>With that in mind, here’s an example of some typical styles for a site’s navigation:</p>
+
+<h3 id="scss-syntax-1">SCSS Syntax</h3>
+
+<pre><code>nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li { display: inline-block; }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+  }
+}
+</code></pre>
+
+<h3 id="sass-syntax-1">Sass Syntax</h3>
+
+<pre><code>nav
+  ul
+    margin: 0
+    padding: 0
+    list-style: none
+
+  li
+    display: inline-block
+
+  a
+    display: block
+    padding: 6px 12px
+    text-decoration: none
+</code></pre>
+
+<p>You’ll notice that the <code>ul</code>, <code>li</code>, and <code>a</code> selectors are nested inside the <code>nav</code> selector. This is a great way to organize your CSS and make it more readable. When you generate the CSS you’ll get something like this:</p>
+
+<pre><code>nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="partials">Partials</h2>
+  </li>
+</ul>
+
+<p>You can create partial Sass files that contain little snippets of CSS that you can include in other Sass files. This is a great way to modularize your CSS and help keep things easier to maintain. A partial is simply a Sass file named with a leading underscore. You might name it something like <code>_partial.scss</code>. The underscore lets Sass know that the file is only a partial file and that it should not be generated into a CSS file. Sass partials are used with the <code>@import</code> directive.</p>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="import">Import</h2>
+  </li>
+</ul>
+
+<p>CSS has an import option that lets you split your CSS into smaller, more maintainable portions. The only drawback is that each time you use <code>@import</code> in CSS it creates another HTTP request. Sass builds on top of the current CSS <code>@import</code> but instead of requiring an HTTP request, Sass will take the file that you want to import and combine it with the file you’re importing into so you can serve a single CSS file to the web browser.</p>
+
+<p>Let’s say you have a couple of Sass files, <code>_reset.scss</code> and <code>base.scss</code>. We want to import <code>_reset.scss</code> into <code>base.scss</code>.</p>
+
+<h3 id="scss-syntax-2">SCSS Syntax</h3>
+
+<pre><code>// _reset.scss
+
+html,
+body,
+ul,
+ol {
+   margin: 0;
+  padding: 0;
+}
+
+
+
+/* base.scss */
+
+@import 'reset';
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</code></pre>
+
+<h3 id="sass-syntax-2">Sass Syntax</h3>
+
+<pre><code>// _reset.sass
+
+html,
+body,
+ul,
+ol
+  margin:  0
+  padding: 0
+
+
+
+// base.sass
+
+@import reset
+
+body
+  font: 100% Helvetica, sans-serif
+  background-color: #efefef
+</code></pre>
+
+<p>Notice we’re using <code>@import 'reset';</code> in the <code>base.scss</code> file. When you import a file you don’t need to include the file extension <code>.scss</code>. Sass is smart and will figure it out for you. When you generate the CSS you’ll get:</p>
+
+<pre><code>html, body, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font: 100% Helvetica, sans-serif;
+  background-color: #efefef;
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="mixins">Mixins</h2>
+  </li>
+</ul>
+
+<p>Some things in CSS are a bit tedious to write, especially with CSS3 and the many vendor prefixes that exist. A mixin lets you make groups of CSS declarations that you want to reuse throughout your site. You can even pass in values to make your mixin more flexible. A good use of a mixin is for vendor prefixes. Here’s an example for <code>border-radius</code>.</p>
+
+<h3 id="scss-syntax-3">SCSS Syntax</h3>
+
+<pre><code>@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.box { @include border-radius(10px); }
+</code></pre>
+
+<h3 id="sass-syntax-3">Sass Syntax</h3>
+
+<pre><code>=border-radius($radius)
+  -webkit-border-radius: $radius
+  -moz-border-radius:    $radius
+  -ms-border-radius:     $radius
+  border-radius:         $radius
+
+.box
+  +border-radius(10px)
+</code></pre>
+
+<p>To create a mixin you use the <code>@mixin</code> directive and give it a name. We’ve named our mixin <code>border-radius</code>. We’re also using the variable <code>$radius</code> inside the parentheses so we can pass in a radius of whatever we want. After you create your mixin, you can then use it as a CSS declaration starting with <code>@include</code> followed by the name of the mixin. When your CSS is generated it’ll look like this:</p>
+
+<pre><code>.box {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="extendinheritance">Extend/Inheritance</h2>
+  </li>
+</ul>
+
+<p>This is one of the most useful features of Sass. Using <code>@extend</code> lets you share a set of CSS properties from one selector to another. It helps keep your Sass very DRY. In our example we’re going to create a simple series of messaging for errors, warnings and successes.</p>
+
+<h3 id="scss-syntax-4">SCSS Syntax</h3>
+
+<pre><code>.message {
+  border: 1px solid #ccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  @extend .message;
+  border-color: green;
+}
+
+.error {
+  @extend .message;
+  border-color: red;
+}
+
+.warning {
+  @extend .message;
+  border-color: yellow;
+}
+</code></pre>
+
+<h3 id="sass-syntax-4">Sass Syntax</h3>
+
+<pre><code>.message
+  border: 1px solid #ccc
+  padding: 10px
+  color: #333
+
+.success
+  @extend .message
+  border-color: green
+
+.error
+  @extend .message
+  border-color: red
+
+.warning
+  @extend .message
+  border-color: yellow
+</code></pre>
+
+<p>What the above code does is allow you to take the CSS properties in <code>.message</code> and apply them to <code>.success</code>, <code>.error</code>, &amp; <code>.warning</code>. The magic happens with the generated CSS, and this helps you avoid having to write multiple class names on HTML elements. This is what it looks like:</p>
+
+<pre><code>.message, .success, .error, .warning {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  color: #333;
+}
+
+.success {
+  border-color: green;
+}
+
+.error {
+  border-color: red;
+}
+
+.warning {
+  border-color: yellow;
+}
+</code></pre>
+
+<hr />
+
+<ul>
+  <li>
+    <h2 id="operators">Operators</h2>
+  </li>
+</ul>
+
+<p>Doing math in your CSS is very helpful. Sass has a handful of standard math operators like <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, and <code>%</code>. In our example we’re going to do some simple math to calculate widths for an <code>aside</code> &amp; <code>article</code>.</p>
+
+<h3 id="scss-syntax-5">SCSS Syntax</h3>
+
+<pre><code>.container { width: 100%; }
+
+article[role="main"] {
+  float: left;
+  width: 600px / 960px * 100%;
+}
+
+aside[role="complimentary"] {
+  float: right;
+  width: 300px / 960px * 100%;
+}
+</code></pre>
+
+<h3 id="sass-syntax-5">Sass Syntax</h3>
+
+<pre><code>.container
+  width: 100%
+
+article[role="main"]
+  float: left
+  width: 600px / 960px * 100%
+
+aside[role="complimentary"]
+  float: right
+  width: 300px / 960px * 100%
+</code></pre>
+
+<p>We’ve created a very simple fluid grid, based on 960px. Operations in Sass let us do something like take pixel values and convert them to percentages without much hassle. The generated CSS will look like:</p>
+
+<pre><code>.container {
+  width: 100%;
+}
+
+article[role="main"] {
+  float: left;
+  width: 62.5%;
+}
+
+aside[role="complimentary"] {
+  float: right;
+  width: 31.25%;
+}
+</code></pre>
+
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

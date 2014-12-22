@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Jekyll Clean Theme &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://Blackoctopus.github.io/2014/08/22/jekyll-clean-theme/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Jekyll Clean Theme">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/2014/08/22/jekyll-clean-theme/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">Jekyll Clean Theme</h1>
+  <span class="post-meta">Aug 22, 2014</span><br>
+  
+  <span class="post-meta small">3 minute read</span>
+</div>
+
+<article class="post-content">
+  <ul>
+  <li>Get it from <a href="https://github.com/scotte/jekyll-clean">github</a>.</li>
+  <li>See the <a href="https://scotte.github.io/jekyll-clean">live demo</a>.</li>
+  <li>See it <a href="https://scotte.github.io">in action on my own blog</a>.</li>
+</ul>
+
+<p>Welcome to the sample post for the Jekyll Clean theme.</p>
+
+<p>A simple and clean Jekyll theme using <a href="http://getbootstrap.com">bootstrap</a>
+(not to be confused with jekyll-bootstrap) that’s easy to modify and very
+modular in component and element reuse.</p>
+
+<p>It uses Disqus for comments and includes Google Analytics support. Both of
+these features are disabled by default and can be enabled via _config.yml. You
+can also rip this code out of the templates if you like (footer.html and post.html).
+The beauty of Jekyll - keep things clean… Jekyll Clean!</p>
+
+<p>The theme works well on mobile phones, using a collapsable nav bar and hiding the
+sidebar. The links pane in the sidebar is available on mobile through the nav menu,
+and you can do the same thing for any other sections added to the sidebar.</p>
+
+<p>Don’t forget to occassionally merge against my upstream repository so you can get
+the latest changes. Pull requests are encouraged and accepted!</p>
+
+<h1 id="installation">Installation</h1>
+
+<p>If you don’t have a blog already on github, start by cloning this repository.
+Best to do that directly on github and then clone that down to your computer.</p>
+
+<p>If you already do have a blog, You can certainly apply this theme to your existing
+blog in place, but then you won’t be able to merge as the theme changes. If you
+re-apply your blog history on top of this theme’s <strong>gh-pages</strong> branch, it’s then
+easy to update to the latest version of the theme. You also don’t want to have to
+deal with resolving old conflicts from your existing history, so you may wish to to
+push your existing master off to a new branch so you have the old history and start
+a new branch with this as the start, merging in your _posts and other assets (after
+git rm’ing the current _posts.</p>
+
+<p>Not ideal, but you have to make a choice - either apply it manually or base your
+blog off this theme’s branch. Either way it will work, and both have their own
+pros and cons.</p>
+
+<p>You can setup an upstream tracking repository like so:</p>
+
+<p><code>
+$ git remote add upstream git@github.com:scotte/jekyll-clean.git
+</code>
+And now when you wish to merge your own branch onto the latest version of the
+theme, simply do:</p>
+
+<p><code>
+$ git fetch upstream
+$ git merge upstream/gh-pages
+</code></p>
+
+<p>Of course you will have to resolve conflicts for _config.yml, _includes/links-list.html,
+and _posts, and so on, but in practice this is pretty simple.</p>
+
+<p>This is how I maintain my own blog which is based on this theme. The old history is
+sitting in an <strong>old-master</strong> branch that I can refer to when I need to.</p>
+
+<h1 id="license">License</h1>
+
+<p>The content of this theme is distributed and licensed under a
+<img src="/images/cc_by_88x31.png" alt="License Badge" />
+<a href="https://creativecommons.org/licenses/by/4.0/legalcode">Creative Commons Attribution 4.0 License</a></p>
+
+<pre><code>This license lets others distribute, remix, tweak, and build upon your work,
+even commercially, as long as they credit you for the original creation. This
+is the most accommodating of licenses offered. Recommended for maximum
+dissemination and use of licensed materials.
+</code></pre>
+
+<p>In other words: you can do anything you want with this theme on any site, just please
+provide a link to <a href="https://github.com/scotte/jekyll-clean">the original theme on github</a>
+so I get credit for the original design. Beyond that, have at it!</p>
+
+<p>This theme includes the following files which are the properties of their
+respective owners:</p>
+
+<ul>
+  <li>js/bootstrap.min.js - <a href="http://getbootstrap.com">bootstrap</a></li>
+  <li>css/bootstrap.min.css - <a href="http://getbootstrap.com">bootstrap</a></li>
+  <li>js/jquery.min.js - <a href="https://jquery.com">jquery</a></li>
+  <li>images/cc_by_88x31.png - <a href="https://creativecommons.org">creative commons</a></li>
+</ul>
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

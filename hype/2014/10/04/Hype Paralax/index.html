@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Create Parallax effects in Hype &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="hype">
+    <link rel="canonical" href="http://Blackoctopus.github.io/hype/2014/10/04/Hype%20Paralax/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Create Parallax effects in Hype">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/hype/2014/10/04/Hype%20Paralax/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">Create Parallax effects in Hype</h1>
+  <span class="post-meta">Oct 4, 2014</span><br>
+  
+  <span class="post-meta small">2 minute read</span>
+</div>
+
+<article class="post-content">
+  <p><a href="http://blog.tumult.com/2014/08/06/tutorial-easily-create-parallax-effects-and-single-page-scrollable-experiences-in-tumult-hype/" title="Permalink to Tutorial: Create Parallax effects and single-page scrollable experiences in Tumult Hype">Source</a></p>
+
+<h4 id="tutorial-create-parallax-effects-and-single-page-scrollable-experiences-in-tumult-hype">Tutorial: Create Parallax effects and single-page scrollable experiences in Tumult Hype</h4>
+
+<p>Our good friends at <a href="https://www.surveylegend.com">Survey Legend</a> have shared a great tutorial with us on creating a single-page website built for navigating by scrolling. If you’d like a quick demo on how this works, visit their <a href="https://www.surveylegend.com">website</a> where they’ve created a single scene document using this process.</p>
+
+<p>This technique is a great way to build what appears to be a long scrollable page, but is actually a single scene through which the user moves.</p>
+
+<p>Check out the <a href="http://tumult.com/support/examples/Scroll-Animation-Control_by-Survey-Legend/Scroll-Transition-Tutorial_by_Survey_Legend.html">tutorial</a> below, or <a href="http://tumult.com/support/examples/Scroll-Animation-Control_by-Survey-Legend/Scroll-Transition-Tutorial_by_Survey_Legend.hype.zip">download the example file</a> to see how it’s built in Tumult Hype.</p>
+
+<p> </p>
+
+<p> </p>
+
+<p><img src="http://blog.tumult.com/wp-content/uploads/2014/08/viewtutorial-280x92.png" alt="viewtutorial" /></p>
+
+<p>The core workflow for this technique is a single scene with elements that animate in and out of the scene. Each animation pauses at a timeline action created for a section:</p>
+
+<p><img src="http://blog.tumult.com/wp-content/uploads/2014/08/timeline.png" alt="timeline" /></p>
+
+<p> </p>
+
+<p>To move between these timeline actions, a small snippet of JavaScript loads when the scene loads. This JavaScript detect a change in the scroll direction and amount, and continues or reverses the main timeline. Run this JavaScript ‘<strong>On Scene Load</strong>’ for any scene you’d like it enabled:</p>
+
+<pre><code>function wheel2(event) { // other browsers
+        event.preventDefault();
+        if (event.detail &lt; 0 &amp;&amp; (hypeDocument.currentTimeInTimelineNamed('Main Timeline') &gt; 2)) {
+            hypeDocument.continueTimelineNamed('Main Timeline', hypeDocument.kDirectionReverse);
+        } else {
+            hypeDocument.continueTimelineNamed('Main Timeline', hypeDocument.kDirectionForward)     }
+    }
+
+function wheel(event) { // Firefox
+        event.preventDefault();
+        if (event.wheelDeltaY &gt; 0 &amp;&amp; (hypeDocument.currentTimeInTimelineNamed('Main Timeline') &gt; 2)) {
+            hypeDocument.continueTimelineNamed('Main Timeline', hypeDocument.kDirectionReverse);
+        } else {
+            hypeDocument.continueTimelineNamed('Main Timeline', hypeDocument.kDirectionForward)     }
+    }
+
+window.onmousewheel = document.onmousewheel = wheel;
+    window.addEventListener("DOMMouseScroll", wheel2, false);
+    document.addEventListener("DOMMouseScroll", wheel2, false);
+</code></pre>
+
+<p><img src="http://blog.tumult.com/wp-content/uploads/2014/08/touchscreen-scrolling.png" alt="touchscreen scrolling" /></p>
+
+<p>Use the above script whenever you want scrolling on a desktop computer to control the direction of the main timeline. For mobile support, use the built-in Drag actions to control your timeline. You may want to create a different document for Mobile Devices, with different timeline timing — a Drag action to control the timeline may not animate the document at the speed you’d like. Please read our <a href="http://tumult.com/hype/documentation/mobile/">Touch &amp; Mobile documentation chapter</a> for more tips.</p>
+
+<p>Since documents within a single scene may lead to large amounts of images loaded in a single document, we recommend using SVG or vector-based graphics. Be aware of what images in your resource library ‘preload’ as this will slow down the initial display of your document.</p>
+
+<p>Here’s a <a href="http://blog.tumult.com/wp-content/uploads/2014/08/basic-example.zip">simpler version</a> of the technique if you’d like to begin with an empty document.  If you have any questions, get in touch @<a href="http://twitter.com/hypeapp">hypeapp</a>.</p>
+
+<p>Thanks to Survey Legend for this tutorial!</p>
+
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

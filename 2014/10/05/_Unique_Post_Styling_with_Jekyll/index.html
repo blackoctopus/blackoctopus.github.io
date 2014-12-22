@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>css post styles &#8211; notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="My notes in a clean jekyll format.">
+    <meta name="author" content="moze">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="http://Blackoctopus.github.io/2014/10/05/_Unique_Post_Styling_with_Jekyll/">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/pixyll.css" type="text/css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Lato:900,300' rel='stylesheet' type='text/css'>
+    
+
+    <!-- Open Graph -->
+    <!-- From: https://github.com/mmistakes/hpstr-jekyll-theme/blob/master/_includes/head.html -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="css post styles">
+    <meta property="og:description" content="My notes in a clean jekyll format.">
+    <meta property="og:url" content="http://Blackoctopus.github.io/2014/10/05/_Unique_Post_Styling_with_Jekyll/">
+    <meta property="og:site_name" content="notes">
+</head>
+
+<body class="animated fade-in-down">
+  <div class="site-wrap">
+    <header class="site-header px2 px-responsive">
+  <div class="mt2 wrap">
+    <div class="measure">
+      <a href="http://Blackoctopus.github.io" class="site-title">notes</a>
+      <nav class="site-nav right">
+        <a href="/about/">About</a>
+<a href="/contact/">Contact</a>
+
+      </nav>
+      <div class="clearfix"></div>
+      
+    </div>
+  </div>
+</header>
+
+
+    <div class="post p2 p-responsive wrap" role="main">
+      <div class="measure">
+        
+
+
+<div class="post-header mb2">
+  <h1 class="py2">css post styles</h1>
+  <span class="post-meta">Oct 5, 2014</span><br>
+  
+  <span class="post-meta small">1 minute read</span>
+</div>
+
+<article class="post-content">
+  <p><a href="http://web-design-weekly.com/2013/04/07/unique-post-styling-with-jekyll/" title="Permalink to Unique Post Styling with Jekyll">Source</a></p>
+
+<h1 id="unique-post-styling-with-jekyll">Unique Post Styling with Jekyll</h1>
+
+<p>The other day <a href="http://daverupert.com/">Dave Rupert</a> blogged about his new JavaScript plugin <a href="http://daverupert.com/2013/04/introducing-timejump/">TimeJump</a>. The Timejump post was a nice little read but the thing that caught my eye was the amount of time he had spent styling the post.</p>
+
+<p>I have been following Dave’s development for a while now and have been keeping an especially close eye on his work with Jekyll.</p>
+
+<hr />
+
+<h3 id="so-how-did-dave-actually-achieve-the-custom-styled-post-with-jekyll">So how did Dave actually achieve the custom styled post with Jekyll?</h3>
+
+<p>After digging around I worked out that he had some sort of ‘Art Direction’ voodoo happening. I have seen this done in WordPress before but not with Jekyll.</p>
+
+<p>I did a little Googling to see if this was common. It’s not. Thankfully Dave replied to my tweet.</p>
+
+<blockquote>
+  <p>@<a href="https://twitter.com/jake_bresnehan">jake_bresnehan</a> I have a <code>head</code> key in my YAML front matter. Couldn’t be easier.</p>
+
+  <p>— Dave Rupert (@davatron5000) <a href="https://twitter.com/davatron5000/status/319598110106062849">April 3, 2013</a></p>
+</blockquote>
+
+<hr />
+
+<h3 id="the-solution">The Solution</h3>
+
+<p>Assuming you have the standard Jekyll structure set up, all should work a treat.</p>
+
+<pre><code>|-- _config.yml
+|-- _layouts
+|   |-- default.html
+|   |-- post.html
+|-- _includes
+|-- _posts
+|   |-- 1970-01-01-placeholder-post.md
+|-- index.html
+</code></pre>
+
+<p>Inside your <code>default.html</code> layout add this little block of <a href="https://github.com/shopify/liquid/wiki/liquid-for-designers">Liquid</a> markup just below your default style sheet call.</p>
+
+<p>This checks to see if your post has any styles in the <a href="https://github.com/mojombo/jekyll/wiki/yaml-front-matter">YAML Front Matter</a> to process. If it does it will add your styles inline in the <code>&lt;head&gt;</code> (yeah it’s bad practice. Blah, blah, blah). If not it will just continue to output the rest of your post file.</p>
+
+<p>With the above snippet added to your <code>default.html</code> layout all you need to do inside your new blog post is add the custom <code>style</code> variable in the YAML Front Matter like so:</p>
+
+<pre><code>---
+layout: post
+title: Placeholder post
+style: |
+  body {
+		background: HoneyDew;
+	}
+---
+
+Your post content
+</code></pre>
+
+<p>Handy Resources:</p>
+
+<h3 id="related"><em>Related</em></h3>
+
+<hr />
+
+<p>This entry was posted in <a href="http://web-design-weekly.com/category/uncategorized/">Uncategorized</a> and tagged <a href="http://web-design-weekly.com/tag/development/">Development</a>.</p>
+
+
+</article>
+
+
+  <h3 class="related-post-title">Related Posts</h3>
+  
+    <div class="post ml2">
+      <a href="/jpd/2014/12/16/jpd/" class="post-link">
+        <h4 class="post-title">Police Notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/notes/2014/12/16/HolidaySchedule/" class="post-link">
+        <h4 class="post-title">holiday notes</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/rolc/2014/12/16/ROLCnotes/" class="post-link">
+        <h4 class="post-title">2014 ROLC</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/coj/2014/12/08/parks/" class="post-link">
+        <h4 class="post-title">parks</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/christmas/2014/11/25/Rolc-1220TA/" class="post-link">
+        <h4 class="post-title">ROLC Christmas</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/web/2014/11/21/site3/" class="post-link">
+        <h4 class="post-title">website 3</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/jacksonville/2014/11/21/gardens/" class="post-link">
+        <h4 class="post-title">Memorial Gardens</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/n/2014/11/19/mssc/" class="post-link">
+        <h4 class="post-title">MCCS</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/work/2014/11/14/ApplicationPeriod-1/" class="post-link">
+        <h4 class="post-title">Christmas Cheer</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+    <div class="post ml2">
+      <a href="/draft/2014/11/06/PreservationState%20describe/" class="post-link">
+        <h4 class="post-title">PreservationState describe</h4>
+        <p class="post-summary"></p>
+      </a>
+    </div>
+  
+
+
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+  <div class="p2 wrap">
+    <div class="measure mt1 center">
+      <small>
+        Crafted with &lt;3 by <a href="http://johnotander.com">John Otander</a> (<a href="https://twitter.com/4lpine">@4lpine</a>).<br>
+        &lt;/&gt; available on <a href="https://github.com/johnotander/pixyll">Github</a>.
+      </small>
+    </div>
+  </div>
+</footer>
+
+
+
+</body>
+</html>
